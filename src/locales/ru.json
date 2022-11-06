@@ -1,0 +1,20 @@
+{
+  "CV": {
+    "downloadBtnText": "Скачать Резюме",
+    "contacts": "контакты",
+    "educations": "образование",
+    "languages": "языки",
+    "certification": "сертификаты",
+    "skills": "скилы",
+    "experience": "мой трудовой опыт",
+    "projects": "проекты",
+    "view-projects": "Посмотреть список проектов с небольшим описанием"
+  },
+  "localSwitcher": {
+    "EN": "Английский",
+    "RU": "Русский"
+  },
+  "common": {
+    "close": "Закрыть"
+  }
+}

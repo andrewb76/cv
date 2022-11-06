@@ -1,0 +1,20 @@
+{
+  "CV": {
+    "downloadBtnText": "Download CV",
+    "contacts": "contacts",
+    "educations": "educations",
+    "languages": "languages",
+    "certification": "certification",
+    "skills": "skills",
+    "experience": "experience",
+    "projects": "projects",
+    "view-projects": "View projects list with tiny descriptions"
+  },
+  "localSwitcher": {
+    "EN": "English",
+    "RU": "Russian"
+  },
+  "common": {
+    "close": "Close"
+  }
+}
