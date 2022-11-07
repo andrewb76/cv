@@ -1,4 +1,5 @@
 const { defineConfig } = require("@vue/cli-service");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -8,6 +9,12 @@ module.exports = defineConfig({
       return args;
     });
   },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html",
+    }),
+  ],
   pluginOptions: {
     i18n: {
       locale: "en",
