@@ -3,6 +3,8 @@ node_modules
 dist
 reports
 logs
+cypress/screenshots
+cypress/videos
 
 
 # local env files
