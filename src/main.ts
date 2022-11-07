@@ -15,7 +15,7 @@ console.log(">>>>>1", process.env.SENTRY_DSN);
 console.log(">>>>>2", process.env.VUE_APP_SENTRY_DSN);
 Sentry.init({
   app,
-  dsn: process.env.SENTRY_DSN,
+  dsn: process.env.VUE_APP_SENTRY_DSN,
   integrations: [
     new BrowserTracing({
       routingInstrumentation: Sentry.vueRouterInstrumentation(router),
