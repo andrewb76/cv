@@ -8,6 +8,12 @@ const routes: Array<RouteRecordRaw> = [
     component: CVView,
     meta: { title: "Andrew Butov. JS Fullstack Dev CV page" },
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "not-found",
+    component: import("@/views/PageNotFoundView.vue"),
+    meta: { title: "Andrew Butov. JS Fullstack Dev 404 page" },
+  },
 ];
 
 const router = createRouter({
