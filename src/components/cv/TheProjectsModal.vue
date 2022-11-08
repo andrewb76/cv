@@ -9,7 +9,7 @@
     class="modal sm:modal-bottom md:modal-middle"
     @click="showProjectsMobile(0, false)"
   >
-    <div class="modal-box flex flex-col">
+    <div class="modal-box flex flex-col" @click.stop="() => {}">
       <div class="box-content w-full flex grow flex-col md:flex-row">
         <div class="md:w-1/3">
           <a :href="`#projects-${nextProjectsIndex(projectsModalIndex)}`">
@@ -60,25 +60,25 @@
           :class="{
             'projects-pager-item--selected': projectsModalIndex === index - 1,
           }"
-          @click="showProjectsMobile(index - 1, true)"
+          @click.stop="showProjectsMobile(index - 1, true)"
         >
           *
         </span>
       </div>
       <div class="btn-group">
         <div
-          @click="
+          @click.stop="
             showProjectsMobile(prevProjectsIndex(projectsModalIndex), true)
           "
           class="btn"
         >
           ❮
         </div>
-        <div @click="showProjectsMobile(0, false)" class="btn grow">
+        <div @click.stop="showProjectsMobile(0, false)" class="btn grow">
           {{ $t("common.close") }}
         </div>
         <div
-          @click="
+          @click.stop="
             showProjectsMobile(nextProjectsIndex(projectsModalIndex), true)
           "
           class="btn"
