@@ -7,6 +7,11 @@ module.exports = defineConfig({
       args[0].title = "Andrew Butov Fullstack JS Developer";
       return args;
     });
+    config.module
+      .rule("pdf")
+      .test(/\.pdf$/)
+      .use("file-loader")
+      .loader("file-loader");
   },
   pluginOptions: {
     i18n: {

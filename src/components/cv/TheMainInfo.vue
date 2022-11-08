@@ -52,11 +52,11 @@
             src="https://cdn-icons-png.flaticon.com/128/281/281760.png"
           />
         </a>
-        <a target="_blank" :href="data.download.google.url[$i18n.locale]">
+        <a :href="`/cv/AndrewButov_CV_2022_${$i18n.locale}.pdf`">
           <img
             class="w-16"
-            alt="PDF"
-            title="PDF"
+            :alt="data.download.google.title[$i18n.locale]"
+            :title="data.download.google.title[$i18n.locale]"
             src="https://cdn-icons-png.flaticon.com/128/4726/4726010.png"
           />
         </a>
