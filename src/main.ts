@@ -10,16 +10,13 @@ import { BrowserTracing } from "@sentry/tracing";
 const pinia = createPinia();
 
 const app = createApp(App);
-console.log(">>>>>1", process.env);
-console.log(">>>>>1", process.env.SENTRY_DSN);
-console.log(">>>>>2", process.env.VUE_APP_SENTRY_DSN);
 Sentry.init({
   app,
   dsn: process.env.VUE_APP_SENTRY_DSN,
   integrations: [
     new BrowserTracing({
       routingInstrumentation: Sentry.vueRouterInstrumentation(router),
-      tracingOrigins: ["localhost", "butov.online", /^\//],
+      tracingOrigins: ["localhost", "dev.butov.online", "butov.online", /^\//],
     }),
   ],
   // Set tracesSampleRate to 1.0 to capture 100%
