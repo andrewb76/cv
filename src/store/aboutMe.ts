@@ -74,8 +74,8 @@ export const iAm: IiAm = {
         ru: "Открыть Резюме в MS Word",
       },
       url: {
-        en: "https://1drv.ms/w/s!AnGRD7Tn3i1KdRn-ddYCAVx70fU?e=loVwNh",
-        ru: "https://1drv.ms/w/s!AnGRD7Tn3i1KbQ0apwVbk34YkNk?e=mWzecR", // todo
+        en: "https://1drv.ms/w/s!AnGRD7Tn3i1KePyM_bV15yK16KM?e=LS9OnX",
+        ru: "https://1drv.ms/w/s!AnGRD7Tn3i1KeXFDc9TTEBVwARU?e=7bBO2s",
       },
     },
     google: {
@@ -85,13 +85,13 @@ export const iAm: IiAm = {
       },
       url: {
         en: "https://docs.google.com/document/d/1GjR42g-8Cf5fXf_lIf1Ge6o2--Y-mr_0SuZJKLlT2us/edit?usp=sharing",
-        ru: "https://docs.google.com/document/d/1GjR42g-8Cf5fXf_lIf1Ge6o2--Y-mr_0SuZJKLlT2us/edit?usp=sharing", //todo
+        ru: "https://docs.google.com/document/d/1Fs2k4asv_x1eIpmUCem3BVzhxVhxLwLhecY1IwDMO6o/edit?usp=sharing",
       },
     },
     pdf: {
       title: {
-        en: "",
-        ru: "",
+        en: "Download PDF",
+        ru: "Скачать PDF",
       },
       url: {
         en: "",
