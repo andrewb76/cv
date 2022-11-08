@@ -5,7 +5,10 @@
     :checked="projectsModalVisible"
     class="modal-toggle"
   />
-  <div class="modal sm:modal-bottom md:modal-middle">
+  <div
+    class="modal sm:modal-bottom md:modal-middle"
+    @click="showProjectsMobile(0, false)"
+  >
     <div class="modal-box flex flex-col">
       <div class="box-content w-full flex grow flex-col md:flex-row">
         <div class="md:w-1/3">
