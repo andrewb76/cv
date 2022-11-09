@@ -9,7 +9,10 @@
     class="modal modal-bottom sm:modal-middle min-w-min cursor-pointer"
     @click="showCertMobile(0, false)"
   >
-    <div class="modal-box overflow-hidden h-full flex flex-col min-h-min">
+    <div
+      class="modal-box overflow-hidden h-full flex flex-col min-h-min"
+      @click.stop="() => {}"
+    >
       <div class="flex flex-col w-full p-1">
         <a :href="data[certModalIndex].url" target="_blank">
           <h3 class="text-sm">

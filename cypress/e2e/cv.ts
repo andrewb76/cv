@@ -1,16 +1,11 @@
 import { When, Then, DataTable } from "@badeball/cypress-cucumber-preprocessor";
 
-When("I visit homepage and click CV menu item", () => {
-  cy.visit("/");
-  cy.get("nav a.cv-link").click();
-});
-
 When("I visit {string}", (url: string) => {
   cy.visit(url);
 });
 
 Then("I should see cv page", () => {
-  cy.location("pathname").should("eq", "/cv");
+  cy.location("pathname").should("eq", "/");
 });
 
 Then(
@@ -19,7 +14,7 @@ Then(
     sections.hashes().forEach((row) => {
       cy.get(`section.${row["section"]}`)
         .should("be.visible")
-        .should("have.attr", "class", row["section"]);
+        .should("have.class", row["section"]);
     });
   }
 );

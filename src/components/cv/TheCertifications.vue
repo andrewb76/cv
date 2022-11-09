@@ -1,5 +1,5 @@
 <template>
-  <cv-section s_name="certification">
+  <cv-section s_name="certifications">
     <div class="section__body">
       <div
         class="certificate flex flex-col pb-3"
