@@ -6,6 +6,7 @@ import { createPinia } from "pinia";
 import i18n from "./i18n";
 import * as Sentry from "@sentry/vue";
 import { BrowserTracing } from "@sentry/tracing";
+import Hotjar from "vue-hotjar";
 
 const pinia = createPinia();
 
@@ -26,4 +27,11 @@ Sentry.init({
   tracesSampleRate: 1.0,
 });
 
-app.use(i18n).use(router).use(pinia).mount("#app");
+app
+  .use(i18n)
+  .use(router)
+  .use(pinia)
+  .use(Hotjar, {
+    id: "3240389", // Hotjar Site ID
+  })
+  .mount("#app");
