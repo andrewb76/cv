@@ -1,4 +1,4 @@
-import CvSection from "@src/components/cv/CvSection.vue";
+import CvSection from "./CvSection.vue";
 
 describe("<CvSection />", () => {
   it("renders", () => {

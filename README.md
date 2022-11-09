@@ -13,12 +13,10 @@
   <a href="https://chat.vuejs.org/"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true" alt="Chat"></a>
   -->
 
-## CI/CD steps:
 
-- check dependencies and generate html report file
+## check dependencies and generate html report file
 ```
-npx snyk test --json > reports/snyk_results.
-npx snyk-to-html -i reports/snyk_results.json -o reports/snyk_results.html -s
+npx snyk test --json > reports/snyk_results && npx snyk-to-html -i reports/snyk_results.json -o reports/snyk_results.html -s
 ```
 - check mega-linter
 ```

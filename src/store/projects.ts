@@ -1148,7 +1148,6 @@ export const projects: IProject[] = [
     from: new Date(2020, 1),
     to: new Date(2020, 12),
   },
-
   {
     key: "bh_rhino",
     country: "us",

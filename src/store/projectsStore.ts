@@ -38,30 +38,61 @@ const emptyGr: IGoup = {
   techs: [],
 };
 
+const emptyHover = {
+  year: "",
+  project: "",
+  tech: "",
+};
+
+const projectDic = projects.reduce(
+  (acc, pr) => ({
+    ...acc,
+    [pr.key]: pr,
+  }),
+  {} as { [key: string]: IProject }
+);
+
 const initialState = {
-  hover: {
-    year: "",
-    project: "",
-    tech: "",
-  },
+  hover: emptyHover,
   selected: emptyGr,
   currentGroup: emptyGr,
-  projectDic: projects.reduce(
-    (acc, pr) => ({
-      ...acc,
-      [pr.key]: pr,
-    }),
-    {} as { [key: string]: IProject }
-  ),
+  projectDic,
   projectKeys: [] as string[],
   techKeys: [] as TTech[],
   years: [] as string[],
 };
 
-interface IsetHoverParams {
+interface ISetHoverParams {
   area: string;
   value: string;
 }
+
+const selectedFnsByAreaType = ({ area, value }: ISetHoverParams) => {
+  if (area === "year") {
+    const prList = R.filter(inTheYear(value), projects);
+    return {
+      projects: prList.map((pr) => getPrKey(pr)),
+      techs: projectsTechList(prList),
+    };
+  } else if (area === "projects") {
+    const pr = projectDic[value];
+    return {
+      years: getPrRage(pr),
+      techs: R.sortBy(R.identity, pr.techStack),
+    };
+  } else if (area === "techs") {
+    const prList = R.filter(filterProjectByTech(value), projects);
+    return {
+      years: R.pipe(
+        R.map(getPrRage),
+        R.unnest,
+        R.uniq,
+        R.sortBy(R.identity)
+      )(prList),
+      projects: prList.map((pr) => getPrKey(pr)),
+    };
+  }
+};
 
 export const useProjectsStore = defineStore("projects", {
   state: () => ({ ...initialState }),
@@ -100,41 +131,20 @@ export const useProjectsStore = defineStore("projects", {
         this.currentGroup = emptyGr;
       }
     },
-    setHover({ area, value }: IsetHoverParams) {
-      if (!value) {
-        this.hover = { year: "", project: "", tech: "" };
-        this.selected = { years: [], projects: [], techs: [] };
-      } else if (area === "year") {
-        this.hover = { year: value, project: "", tech: "" };
-        const yearFilter = inTheYear(value);
-        const prList = R.filter(yearFilter, projects);
-        this.selected = {
-          years: [value],
-          projects: prList.map((pr) => getPrKey(pr)),
-          techs: projectsTechList(prList),
-        };
-      } else if (area === "project") {
-        this.hover = { year: "", project: value, tech: "" };
-        const pr = this.projectDic[value];
-        this.selected = {
-          years: getPrRage(pr),
-          projects: [value],
-          techs: R.sortBy(R.identity, pr.techStack),
-        };
-      } else if (area === "tech") {
-        this.hover = { year: "", project: "", tech: value };
-        const prList = R.filter(filterProjectByTech(value), projects);
-        this.selected = {
-          years: R.pipe(
-            R.map(getPrRage),
-            R.unnest,
-            R.uniq,
-            R.sortBy(R.identity)
-          )(prList),
-          projects: prList.map((pr) => getPrKey(pr)),
-          techs: [value],
-        };
+    setHover({ area, value }: ISetHoverParams) {
+      const hover = emptyHover;
+      const selected = emptyGr;
+      const areaProp = area as keyof typeof emptyHover;
+      const areaPropM = `${area}s` as keyof typeof emptyGr;
+      if (value) {
+        hover[areaProp] = value;
+        selected[areaPropM] = [value];
       }
+      this.hover = hover;
+      this.selected = {
+        ...selected,
+        ...selectedFnsByAreaType({ area, value }),
+      };
     },
   },
 });
