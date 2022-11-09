@@ -7,7 +7,6 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
     "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions"
   },
   "resolutions": {

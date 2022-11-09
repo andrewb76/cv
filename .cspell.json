@@ -15,6 +15,7 @@
     "daisyui",
     "megalinter",
     "oxsecurity",
+    "Snyk",
     "tailwindcss"
   ],
   "version": "0.2"
