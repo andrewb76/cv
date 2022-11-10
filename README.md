@@ -1,3 +1,4 @@
+
 # Simple Vue App for hosting personal CV page
 
 ![W3C Validation](https://badges.hiptest.com:/w3c-validation/html?style=for-the-badge&targetUrl=https%3A%2F%2Fbutov.online)
