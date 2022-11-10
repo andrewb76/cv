@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^13.0.2",
+    "@cloudflare/pages-plugin-sentry": "^1.0.0",
     "@cypress/vue": "^3.1.0",
     "@cypress/webpack-dev-server": "^2.4.1",
     "@sentry/tracing": "^7.17.4",
