@@ -1,20 +1,24 @@
-# vue-hp
+# Simple Vue App for hosting personal CV page
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-<p align="center">
-</p>
-  <a href="https://codecov.io/github/vuejs/vue?branch=dev"><img src="https://img.shields.io/codecov/c/github/vuejs/vue/dev.svg?sanitize=true" alt="Coverage Status"></a>
-  <!--
-  <a href="https://circleci.com/gh/vuejs/vue/tree/dev"><img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg?sanitize=true" alt="Build Status"></a>
-  <a href="https://npmcharts.com/compare/vue?minimal=true"><img src="https://img.shields.io/npm/dm/vue.svg?sanitize=true" alt="Downloads"></a>
-  <a href="https://www.npmjs.com/package/vue"><img src="https://img.shields.io/npm/v/vue.svg?sanitize=true" alt="Version"></a>
-  <a href="https://www.npmjs.com/package/vue"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
-  <a href="https://chat.vuejs.org/"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true" alt="Chat"></a>
-  -->
+![W3C Validation](https://badges.hiptest.com:/w3c-validation/html?style=for-the-badge&targetUrl=https%3A%2F%2Fbutov.online)
+![Snyk Vulnerabilities for GitHub Repo](https://badges.hiptest.com:/snyk/vulnerabilities/github/andrewb76/cv?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/andrewb76/cv?style=for-the-badge)
+![Code Climate issues](https://img.shields.io/codeclimate/issues/andrewb76/cv?style=for-the-badge)
+![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/andrewb76/cv?style=for-the-badge)
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/andrewb76/cv/master?style=for-the-badge)
+![CII Best Practices Level](https://img.shields.io/cii/level/6672?style=for-the-badge)
+![CII Best Practices Tiered Percentage](https://img.shields.io/cii/percentage/6672?style=for-the-badge)
+![CII Best Practices Summary](https://img.shields.io/cii/summary/6672)
+![PingPong status](https://badges.hiptest.com:/pingpong/status/sp_d84e88bad9b74d83878e0b498ef2fa4b?style=for-the-badge)
 
 
-## check dependencies and generate html report file
+
+
+![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/andrewb76/cv/master?style=for-the-badge)
+
+
+## SNYK check dependencies and generate html report file
+
 ```
 npx snyk test --json > reports/snyk_results && npx snyk-to-html -i reports/snyk_results.json -o reports/snyk_results.html -s
 ```

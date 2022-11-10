@@ -1,16 +1,4 @@
-interface IEnRu {
-  [lang: string]: string;
-}
-interface IContact {
-  title: string;
-  icon: string;
-  url: string;
-}
-
-interface IDownload {
-  title: IEnRu;
-  url: IEnRu;
-}
+import { IEnRu } from "./aboutMe";
 
 export interface IExperience {
   list: {
