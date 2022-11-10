@@ -75,7 +75,6 @@ export default defineComponent({
 .tech {
   opacity: 0.5;
   fill: dark-gray;
-  text-shadow: 2px white;
   transition: opacity 1s;
   text-shadow: 2px 2px 5px #fff;
 
