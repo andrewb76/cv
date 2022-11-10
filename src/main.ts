@@ -14,11 +14,10 @@ const app = createApp(App);
 Sentry.init({
   app,
   dsn: process.env.VUE_APP_SENTRY_DSN,
-  // tunnel: "/tunnel",
   integrations: [
     new BrowserTracing({
       routingInstrumentation: Sentry.vueRouterInstrumentation(router),
-      tracingOrigins: ["*", /^\//],
+      tracingOrigins: ["localhost", "butov.online", /^\//],
     }),
   ],
   // Set tracesSampleRate to 1.0 to capture 100%
