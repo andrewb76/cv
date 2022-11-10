@@ -11,7 +11,15 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
+          record: true
           node-version: 16
           install-command: yarn
           build: npm run build
           start: npm run serve
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # pass the project ID from the secrets through environment variable
+          CYPRESS_PROJECT_ID: ${{ secrets.PROJECT_ID }}

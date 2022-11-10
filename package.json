@@ -70,11 +70,7 @@
     "vue-cli-plugin-tailwind": "~3.0.0"
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true,
-    "json": {
-      "enabled": true,
-      "output": "logs/log.json"
-    }
+    "nonGlobalStepDefinitions": true
   },
   "husky": {
     "hooks": {
