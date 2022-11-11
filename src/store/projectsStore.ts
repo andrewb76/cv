@@ -144,14 +144,14 @@ export const useProjectsStore = defineStore("projects", {
             R.uniq,
             R.sort((a: string, b: string) => a.localeCompare(b))
           )(this.projects);
-          this.projectKeys = projects.map((pr: IProject) => getPrKey(pr));
+          this.projectKeys = this.projects.map((pr: IProject) => getPrKey(pr));
           this.techKeys = R.pipe(
             R.map(defaultTs),
             R.unnest,
             R.countBy(R.identity),
             R.toPairs,
             R.map((p) => ({ text: p[0], value: p[1] }))
-          )(projects) as TTech[];
+          )(this.projects) as TTech[];
         })
         .finally(() => {
           this.isLoading = false;
