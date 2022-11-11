@@ -2,6 +2,9 @@ import * as R from "ramda";
 import { projects, IProject } from "./projects";
 import { defineStore } from "pinia";
 
+const JSON_BIN_ROOT = "https://api.jsonbin.io/v3";
+const JSON_BIN_PROJECTS_ID = "636db9412b3499323bfc3829";
+
 const getPrRage = (pr: IProject) =>
   R.range(pr.from.getFullYear(), (pr.to || pr.from).getFullYear() + 1).map(
     (y) => y.toString()
@@ -53,6 +56,7 @@ const projectDic = projects.reduce(
 );
 
 const initialState = {
+  isLoading: true,
   hover: emptyHover,
   selected: emptyGr,
   currentGroup: emptyGr,
@@ -107,22 +111,29 @@ export const useProjectsStore = defineStore("projects", {
       this.projectKeys = [];
     },
     init() {
-      this.years = R.pipe(
-        R.map(getPrRage),
-        R.unnest,
-        R.uniq,
-        R.sort((a: string, b: string) => a.localeCompare(b))
-      )(projects);
+      fetch(`${JSON_BIN_ROOT}/b/${JSON_BIN_PROJECTS_ID}`)
+        .then((response) => response.json())
+        .then((projects) => {
+          this.years = R.pipe(
+            R.map(getPrRage),
+            R.unnest,
+            R.uniq,
+            R.sort((a: string, b: string) => a.localeCompare(b))
+          )(projects);
 
-      this.projectKeys = projects.map((pr) => getPrKey(pr));
+          this.projectKeys = projects.map((pr: IProject) => getPrKey(pr));
 
-      this.techKeys = R.pipe(
-        R.map(defaultTs),
-        R.unnest,
-        R.countBy(R.identity),
-        R.toPairs,
-        R.map((p) => ({ text: p[0], value: p[1] }))
-      )(projects) as TTech[];
+          this.techKeys = R.pipe(
+            R.map(defaultTs),
+            R.unnest,
+            R.countBy(R.identity),
+            R.toPairs,
+            R.map((p) => ({ text: p[0], value: p[1] }))
+          )(projects) as TTech[];
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
     },
     changeDialogMode() {
       if (!this.currentGroup.projects.length) {
