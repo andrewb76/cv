@@ -1,9 +1,11 @@
 import * as R from "ramda";
-import { projects, IProject } from "./projects";
+import { IProject, IProjectJson, IProjectDic } from "./projectsInterfaces";
 import { defineStore } from "pinia";
 
 const JSON_BIN_ROOT = "https://api.jsonbin.io/v3";
 const JSON_BIN_PROJECTS_ID = "636db9412b3499323bfc3829";
+const JSONBIN_X_ACCESS_KEY = process.env.VUE_APP_JSONBIN_X_ACCESS_KEY || "";
+const EDUCATION_PROJECT_KEY = "ed_tnu";
 
 const getPrRage = (pr: IProject) =>
   R.range(pr.from.getFullYear(), (pr.to || pr.from).getFullYear() + 1).map(
@@ -47,20 +49,13 @@ const emptyHover = {
   tech: "",
 };
 
-const projectDic = projects.reduce(
-  (acc, pr) => ({
-    ...acc,
-    [pr.key]: pr,
-  }),
-  {} as { [key: string]: IProject }
-);
-
 const initialState = {
   isLoading: true,
   hover: emptyHover,
   selected: emptyGr,
   currentGroup: emptyGr,
-  projectDic,
+  projects: [] as IProject[],
+  projectDic: {} as IProjectDic,
   projectKeys: [] as string[],
   techKeys: [] as TTech[],
   years: [] as string[],
@@ -71,58 +66,85 @@ interface ISetHoverParams {
   value: string;
 }
 
-const selectedFnsByAreaType = ({ area, value }: ISetHoverParams) => {
-  if (area === "year") {
-    const prList = R.filter(inTheYear(value), projects);
-    return {
-      projects: prList.map((pr) => getPrKey(pr)),
-      techs: projectsTechList(prList),
-    };
-  } else if (area === "projects") {
-    const pr = projectDic[value];
-    return {
-      years: getPrRage(pr),
-      techs: R.sortBy(R.identity, pr.techStack),
-    };
-  } else if (area === "techs") {
-    const prList = R.filter(filterProjectByTech(value), projects);
-    return {
-      years: R.pipe(
-        R.map(getPrRage),
-        R.unnest,
-        R.uniq,
-        R.sortBy(R.identity)
-      )(prList),
-      projects: prList.map((pr) => getPrKey(pr)),
-    };
-  }
-};
-
 export const useProjectsStore = defineStore("projects", {
   state: () => ({ ...initialState }),
   getters: {
     projectRange: () => (pr: IProject) => {
       return getPrRage(pr);
     },
+    education: (state) => {
+      console.log("---===>>>>>> ");
+      console.log("---===>>>>>> ", state.projects[2].key);
+      return state.projects.find(
+        (pr: IProject) => pr.key === EDUCATION_PROJECT_KEY
+      );
+    },
+    selectedFnsByAreaType:
+      (state) =>
+      ({ area, value }: ISetHoverParams) => {
+        if (area === "year") {
+          const prList = R.filter(inTheYear(value), state.projects);
+          return {
+            projects: prList.map((pr: IProject) => getPrKey(pr)),
+            techs: projectsTechList(prList),
+            years: [] as string[],
+          };
+        } else if (area === "projects") {
+          const pr = state.projectDic[value];
+          return {
+            projects: [] as IProject[],
+            techs: R.sortBy(R.identity, pr.techStack),
+            years: getPrRage(pr),
+          };
+        } else if (area === "techs") {
+          const prList = R.filter(filterProjectByTech(value), state.projects);
+          return {
+            years: R.pipe(
+              R.map(getPrRage),
+              R.unnest,
+              R.uniq,
+              R.sortBy(R.identity)
+            )(prList),
+            techs: [] as TTech[],
+            projects: prList.map((pr: IProject) => getPrKey(pr)),
+          };
+        }
+      },
   },
   actions: {
     clear() {
       this.years = [];
       this.projectKeys = [];
     },
-    init() {
-      fetch(`${JSON_BIN_ROOT}/b/${JSON_BIN_PROJECTS_ID}`)
+    init(): Promise<void> {
+      return fetch(`${JSON_BIN_ROOT}/b/${JSON_BIN_PROJECTS_ID}?meta=false`, {
+        headers: {
+          "X-Access-Key": JSONBIN_X_ACCESS_KEY,
+        },
+      })
         .then((response) => response.json())
-        .then((projects) => {
+        .then((projects: IProjectJson[]) => {
+          this.projects = projects.map(
+            (project: IProjectJson): IProject => ({
+              ...project,
+              from: new Date(project.from[0], project.from[1]),
+              to: new Date(project.to[0], project.to[1]),
+            })
+          );
+          this.projectDic = this.projects.reduce(
+            (acc: IProjectDic, pr: IProject) => ({
+              ...acc,
+              [pr.key]: pr,
+            }),
+            {} as IProjectDic
+          );
           this.years = R.pipe(
             R.map(getPrRage),
             R.unnest,
             R.uniq,
             R.sort((a: string, b: string) => a.localeCompare(b))
-          )(projects);
-
+          )(this.projects);
           this.projectKeys = projects.map((pr: IProject) => getPrKey(pr));
-
           this.techKeys = R.pipe(
             R.map(defaultTs),
             R.unnest,
@@ -133,6 +155,7 @@ export const useProjectsStore = defineStore("projects", {
         })
         .finally(() => {
           this.isLoading = false;
+          return Promise.resolve();
         });
     },
     changeDialogMode() {
@@ -153,8 +176,8 @@ export const useProjectsStore = defineStore("projects", {
       }
       this.hover = hover;
       this.selected = {
+        // ...selectedFnsByAreaType({ area, value }),
         ...selected,
-        ...selectedFnsByAreaType({ area, value }),
       };
     },
   },

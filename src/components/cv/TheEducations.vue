@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { IProject } from "@/store/projects";
+import { IProject } from "@/store/projectsInterfaces";
 import CvSection from "./CvSection.vue"; // @ is an alias to /src
 
 export default defineComponent({
