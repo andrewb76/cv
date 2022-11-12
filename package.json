@@ -63,6 +63,7 @@
     "prettier": "^2.4.1",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
+    "serve": "^14.1.1",
     "snyk": "^1.1040.0",
     "snyk-to-html": "^2.3.6",
     "typescript": "^4.8",
