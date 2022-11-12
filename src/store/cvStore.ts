@@ -16,6 +16,7 @@ export const useCVStore = defineStore("cv", {
   }),
   actions: {
     init(): Promise<void> {
+      this.isLoading = true;
       return fetch(`${JSONBIN_ROOT}/b/${JSONBIN_CERTIFIICATES_ID}?meta=false`, {
         headers: {
           "X-Access-Key": JSONBIN_X_ACCESS_KEY,

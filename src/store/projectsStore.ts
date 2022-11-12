@@ -3,9 +3,9 @@ import { IProject, IProjectJson, IProjectDic } from "./projectsInterfaces";
 import { defineStore } from "pinia";
 
 const JSON_BIN_ROOT = "https://api.jsonbin.io/v3";
-const JSON_BIN_PROJECTS_ID = "636db9412b3499323bfc3829";
-const JSONBIN_X_ACCESS_KEY = process.env.VUE_APP_JSONBIN_X_ACCESS_KEY || "";
 const EDUCATION_PROJECT_KEY = "ed_tnu";
+const JSON_BIN_PROJECTS_ID = process.env.VUE_APP_JSONBIN_PROJECTS_ID || "";
+const JSONBIN_X_ACCESS_KEY = process.env.VUE_APP_JSONBIN_X_ACCESS_KEY || "";
 
 const getPrRage = (pr: IProject) =>
   R.range(pr.from.getFullYear(), (pr.to || pr.from).getFullYear() + 1).map(
