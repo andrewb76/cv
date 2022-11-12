@@ -125,15 +125,17 @@ export const useProjectsStore = defineStore("projects", {
         .then((response) => response.json())
         .then((projects) => {
           if (!Array.isArray(projects)) {
-            throw new Error(projects.message);
+            // throw new Error(projects.message);
+            this.projects = [];
+          } else {
+            this.projects = projects.map(
+              (project: IProjectJson): IProject => ({
+                ...project,
+                from: new Date(project.from[0], project.from[1]),
+                to: new Date(project.to[0], project.to[1]),
+              })
+            );
           }
-          this.projects = projects.map(
-            (project: IProjectJson): IProject => ({
-              ...project,
-              from: new Date(project.from[0], project.from[1]),
-              to: new Date(project.to[0], project.to[1]),
-            })
-          );
           this.projectDic = this.projects.reduce(
             (acc: IProjectDic, pr: IProject) => ({
               ...acc,
