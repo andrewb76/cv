@@ -31,6 +31,6 @@ app
   .use(router)
   .use(pinia)
   .use(Hotjar, {
-    id: "3240389", // Hotjar Site ID
+    id: "3240389", //TODO: moove to env Hotjar Site ID
   })
   .mount("#app");
