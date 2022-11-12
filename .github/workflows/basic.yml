@@ -16,7 +16,7 @@ jobs:
           install-command: yarn
           build: yarn build
           start: npx serve -s dist -l 8080 # npm run serve
-          browser: firefox
+          # browser: firefox
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
