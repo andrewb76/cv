@@ -11,7 +11,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          record: true
+          # record: true
           node-version: 16
           install-command: yarn
           build: yarn build
