@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 
 const JSON_BIN_ROOT = "https://api.jsonbin.io/v3";
 const EDUCATION_PROJECT_KEY = "ed_tnu";
-const JSON_BIN_PROJECTS_ID = process.env.VUE_APP_JSONBIN_PROJECTS_ID || "";
+const JSONBIN_PROJECTS_ID = process.env.VUE_APP_JSONBIN_PROJECTS_ID || "";
 const JSONBIN_X_ACCESS_KEY = process.env.VUE_APP_JSONBIN_X_ACCESS_KEY || "";
 
 const getPrRage = (pr: IProject) =>
@@ -115,13 +115,18 @@ export const useProjectsStore = defineStore("projects", {
       this.projectKeys = [];
     },
     init(): Promise<void> {
-      return fetch(`${JSON_BIN_ROOT}/b/${JSON_BIN_PROJECTS_ID}?meta=false`, {
+      const projectsDataUrl = `${JSON_BIN_ROOT}/b/${JSONBIN_PROJECTS_ID}?meta=false`;
+
+      return fetch(projectsDataUrl, {
         headers: {
           "X-Access-Key": JSONBIN_X_ACCESS_KEY,
         },
       })
         .then((response) => response.json())
-        .then((projects: IProjectJson[]) => {
+        .then((projects) => {
+          if (!Array.isArray(projects)) {
+            throw new Error(projects.message);
+          }
           this.projects = projects.map(
             (project: IProjectJson): IProject => ({
               ...project,
