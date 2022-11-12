@@ -73,8 +73,6 @@ export const useProjectsStore = defineStore("projects", {
       return getPrRage(pr);
     },
     education: (state) => {
-      console.log("---===>>>>>> ");
-      console.log("---===>>>>>> ", state.projects[2].key);
       return state.projects.find(
         (pr: IProject) => pr.key === EDUCATION_PROJECT_KEY
       );

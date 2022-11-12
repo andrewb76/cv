@@ -15,7 +15,7 @@ jobs:
           node-version: 16
           install-command: yarn
           build: npm run build
-          start: http-server dist
+          start: npm run serve
           browser: chrome
         env:
           # pass the Dashboard record key as an environment variable

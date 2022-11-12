@@ -39,7 +39,6 @@ export default defineComponent({
     const projects = computed(() => projectsStore.projects);
     const certificates = computed(() => cv.iAm.certificates);
     const iAm = computed(() => cv.iAm);
-    console.log(projects, education);
     return {
       iAm,
       education,
