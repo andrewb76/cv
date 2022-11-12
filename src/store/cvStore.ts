@@ -24,7 +24,6 @@ export const useCVStore = defineStore("cv", {
       })
         .then((response) => response.json())
         .then((certificates: IProjectJson[]) => {
-
           if (!Array.isArray(certificates)) {
             this.iAm.certificates = [];
             return;
