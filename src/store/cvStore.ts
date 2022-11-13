@@ -27,15 +27,15 @@ export const useCVStore = defineStore("cv", {
           if (!Array.isArray(certificates)) {
             this.iAm.certificates = [];
             return;
-            // throw new Error(certificates.message);
+          } else {
+            this.iAm.certificates = certificates.map(
+              (certificate): IProject => ({
+                ...certificate,
+                from: new Date(certificate.from[0], certificate.from[1]),
+                to: new Date(certificate.to[0], certificate.to[1]),
+              })
+            );
           }
-          this.iAm.certificates = certificates.map(
-            (certificate): IProject => ({
-              ...certificate,
-              from: new Date(certificate.from[0], certificate.from[1]),
-              to: new Date(certificate.to[0], certificate.to[1]),
-            })
-          );
         })
         .finally(() => {
           this.isLoading = false;

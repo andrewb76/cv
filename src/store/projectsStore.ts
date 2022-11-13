@@ -125,7 +125,6 @@ export const useProjectsStore = defineStore("projects", {
         .then((response) => response.json())
         .then((projects) => {
           if (!Array.isArray(projects)) {
-            // throw new Error(projects.message);
             this.projects = [];
           } else {
             this.projects = projects.map(
