@@ -1,6 +1,6 @@
 {
   "name": "vue-hp",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,8 @@
     "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions"
   },
   "resolutions": {
-    "ansi-regex": "5.0.1"
+    "ansi-regex": "5.0.1",
+    "@storybook/manager-webpack5/html-webpack-plugin": "^5.0.0"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^13.0.2",
@@ -63,6 +64,7 @@
     "prettier": "^2.4.1",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
+    "serve": "^14.1.1",
     "snyk": "^1.1040.0",
     "snyk-to-html": "^2.3.6",
     "typescript": "^4.8",
