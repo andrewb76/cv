@@ -26,10 +26,9 @@ export const useCVStore = defineStore("cv", {
         .then((certificates: IProjectJson[]) => {
           if (!Array.isArray(certificates)) {
             this.iAm.certificates = [];
-            return;
           } else {
             this.iAm.certificates = certificates.map(
-              (certificate): IProject => ({
+              (certificate: IProjectJson): IProject => ({
                 ...certificate,
                 from: new Date(certificate.from[0], certificate.from[1]),
                 to: new Date(certificate.to[0], certificate.to[1]),
