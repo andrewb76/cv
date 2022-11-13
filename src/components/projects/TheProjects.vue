@@ -33,7 +33,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
-import { IProject } from "@/store/projects";
+import { IProject } from "@/store/projectsInterfaces";
 
 export default defineComponent({
   name: "TheYears",

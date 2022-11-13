@@ -93,7 +93,7 @@
 <script lang="ts">
 import { defineComponent, PropType, ref, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
-import { IProject } from "@/store/projects";
+import { IProject } from "@/store/projectsInterfaces";
 
 export default defineComponent({
   props: {

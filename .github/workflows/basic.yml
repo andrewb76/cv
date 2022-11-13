@@ -6,16 +6,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      # - name: Download the build folders
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     name: build
+      #     path: build
+
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
+
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
           record: true
           node-version: 16
           install-command: yarn
-          build: npm run build
-          start: npm run serve
+          build: yarn build
+          # start: npx serve -s dist -l 8080
+          start: npm run serve; echo $VUE_APP_JSONBIN_X_ACCESS_KEY; echo $VUE_APP_JSONBIN_PROJECTS_ID;
+          browser: chrome
+          headed: true
+          # browser: firefox
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
