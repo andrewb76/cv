@@ -19,7 +19,7 @@
         {{ data.position[$i18n.locale] }}
       </div>
       <h3 class="w-full text-center">
-        {{ $t("CV.downloadBtnText") }}
+        {{ $t('CV.downloadBtnText') }}
       </h3>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -69,9 +69,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { IiAm } from "@/store/aboutMe";
-import TheLocaleSelector from "@/components/TheLocaleSelector.vue";
+// Main Info component
+import { defineComponent, PropType } from 'vue'
+import { IiAm } from '@/store/aboutMe'
+import TheLocaleSelector from '@/components/TheLocaleSelector.vue'
 
 export default defineComponent({
   components: {
@@ -83,7 +84,7 @@ export default defineComponent({
       required: true,
     },
   },
-});
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

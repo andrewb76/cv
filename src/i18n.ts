@@ -1,11 +1,11 @@
-import { createI18n } from "vue-i18n";
+import { createI18n } from 'vue-i18n'
 
 export default createI18n({
   legacy: false,
-  locale: process.env.VUE_APP_I18N_LOCALE || "en",
-  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
+  locale: process.env.VUE_APP_I18N_LOCALE || 'en',
+  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
   messages: {
-    en: require("./locales/en.json"),
-    ru: require("./locales/ru.json"),
-  },
-});
+    en: require('./locales/en.json'),
+    ru: require('./locales/ru.json')
+  }
+})

@@ -8,8 +8,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import CvSection from "./CvSection.vue"; // @ is an alias to /src
+import { defineComponent } from 'vue'
+import CvSection from './CvSection.vue' // @ is an alias to /src
 
 export default defineComponent({
   components: {
@@ -21,7 +21,7 @@ export default defineComponent({
       required: true,
     },
   },
-});
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,6 +1,12 @@
 
 # Simple Vue App for hosting personal CV page
 
+## buttons
+
+### ready
+
+### raw
+
 ![PingPong status](https://badges.hiptest.com:/pingpong/status/sp_d84e88bad9b74d83878e0b498ef2fa4b?style=for-the-badge)
 ![W3C Validation](https://badges.hiptest.com:/w3c-validation/html?style=for-the-badge&targetUrl=https%3A%2F%2Fbutov.online)
 
@@ -24,34 +30,35 @@
 
 ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/andrewb76/cv/master?style=for-the-badge)
 
+## CLI
 
 ### SNYK check dependencies and generate html report file
-```
+```bash
 npx snyk test --json > reports/snyk_results && npx snyk-to-html -i reports/snyk_results.json -o reports/snyk_results.html -s
 ```
 
 ### BDD configured cypress for e2e tests
-```
+```bash
 npx cypress run
 ```
 
 ### Project setup
-```
+```bash
 yarn
 ```
 
 ### Compiles and hot-reloads for development
-```
+```bash
 npm run serve
 ```
 
 ### Compiles and minifies for production
-```
+```bash
 npm run build
 ```
 
 ### Lints and fixes files
-```
+```bash
 npm run lint
 npx mega-linter-runner --flavor salesforce -e 'ENABLE=,DOCKERFILE,MARKDOWN,YAML' -e 'SHOW_ELAPSED_TIME=true'
 ```

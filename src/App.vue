@@ -6,7 +6,7 @@
   <!-- </transition> -->
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 // import TheMainMenu from "@/components/TheMainMenu.vue";
 // import TheLocaleSelector from "@/components/TheLocaleSelector.vue";
 
@@ -18,15 +18,15 @@ export default defineComponent({
   setup: () => {
     return {
       links: [
-        { name: "home", url: "/", title: "Home" },
-        { name: "about", url: "/about", title: "About" },
-        { name: "projects", url: "/projects", title: "Projects" },
-        { name: "cv", url: "/cv", title: "CV" },
-        { name: "projects", url: "/projects", title: "Projects" },
+        { name: 'home', url: '/', title: 'Home' },
+        { name: 'about', url: '/about', title: 'About' },
+        { name: 'projects', url: '/projects', title: 'Projects' },
+        { name: 'cv', url: '/cv', title: 'CV' },
+        { name: 'projects', url: '/projects', title: 'Projects' },
       ],
-    };
+    }
   },
-});
+})
 </script>
 <style lang="scss">
 .fade {

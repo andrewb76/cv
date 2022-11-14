@@ -1,6 +1,6 @@
 <script>
-import * as d3 from "d3";
-import * as cloud from "d3-cloud";
+import * as d3 from 'd3'
+import * as cloud from 'd3-cloud'
 
 export default {
   data() {
@@ -8,7 +8,7 @@ export default {
       layout: {},
       chart: {},
       fill: null,
-    };
+    }
   },
 
   props: {
@@ -18,7 +18,7 @@ export default {
     },
     elClass: {
       type: [String, Function],
-      default: "cloud-item",
+      default: 'cloud-item',
     },
     fontSizeMapper: {
       type: Function,
@@ -42,7 +42,7 @@ export default {
     },
     font: {
       type: [String, Function],
-      default: "Serif",
+      default: 'Serif',
     },
     width: {
       type: [Number, String],
@@ -58,11 +58,11 @@ export default {
     },
     spiral: {
       type: String,
-      default: "archimedean",
+      default: 'archimedean',
     },
     coloring: {
       type: String,
-      default: "random",
+      default: 'random',
     },
     colors: {
       type: Array,
@@ -70,38 +70,38 @@ export default {
   },
 
   mounted() {
-    this.createCanvas();
+    this.createCanvas()
   },
 
   watch: {
     data() {
-      this.createCanvas();
+      this.createCanvas()
     },
     rotate() {
-      this.createCanvas();
+      this.createCanvas()
     },
     font() {
-      this.createCanvas();
+      this.createCanvas()
     },
     padding() {
-      this.createCanvas();
+      this.createCanvas()
     },
     spiral() {
-      this.createCanvas();
+      this.createCanvas()
     },
     colors() {
-      this.createCanvas();
+      this.createCanvas()
     },
     coloring() {
-      this.createCanvas();
+      this.createCanvas()
     },
   },
 
   methods: {
-    createCanvas: function () {
-      const wordCounts = this.data.map((text) => ({ ...text }));
+    createCanvas() {
+      const wordCounts = this.data.map((text) => ({ ...text }))
 
-      d3.select(this.$el).selectAll("*").remove();
+      d3.select(this.$el).selectAll('*').remove()
 
       const layout = cloud()
         .size([this.width, this.height])
@@ -111,57 +111,57 @@ export default {
         .rotate(this.rotate)
         .font(this.font)
         .fontSize(this.fontSizeMapper)
-        .on("end", this.end);
+        .on('end', this.end)
 
-      if (this.colors) this.fill = d3.scaleOrdinal().range(this.colors);
-      else this.fill = d3.scaleOrdinal(d3.schemeCategory10);
+      if (this.colors) this.fill = d3.scaleOrdinal().range(this.colors)
+      else this.fill = d3.scaleOrdinal(d3.schemeCategory10)
 
-      layout.start();
+      layout.start()
     },
-    end: function (words) {
-      let _fill = (d, i) => this.fill(i);
+    end(words) {
+      const _fill = (d, i) => this.fill(i)
 
       d3.select(this.$el)
-        .append("svg")
-        .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", "0 0 600 400")
+        .append('svg')
+        .attr('preserveAspectRatio', 'xMinYMin meet')
+        .attr('viewBox', '0 0 600 400')
         // .attr("width", this.width)
         // .attr("height", this.height)
-        .append("g")
-        .attr("transform", `translate(${this.width / 2},${this.height / 2})`)
-        .selectAll("text")
+        .append('g')
+        .attr('transform', `translate(${this.width / 2},${this.height / 2})`)
+        .selectAll('text')
         .data(words)
         .enter()
-        .append("text")
+        .append('text')
         .classed(this.elClass, true)
-        .style("cursor", "pointer")
-        .style("font-family", (d) => d.font)
-        .style("font-size", (d) => {
-          return `${d.size}px`;
+        .style('cursor', 'pointer')
+        .style('font-family', (d) => d.font)
+        .style('font-size', (d) => {
+          return `${d.size}px`
         })
-        .style("fill", _fill)
-        .attr("text-anchor", "middle")
-        .attr("transform", (d) => {
-          return `translate(${[d.x, d.y]})rotate(${d.rotate})`;
+        .style('fill', _fill)
+        .attr('text-anchor', 'middle')
+        .attr('transform', (d) => {
+          return `translate(${[d.x, d.y]})rotate(${d.rotate})`
         })
         .text((d) => d.text)
-        .on("click", (ev) => {
-          const el = d3.select(ev.target);
-          this.onWordClick(el.text());
+        .on('click', (ev) => {
+          const el = d3.select(ev.target)
+          this.onWordClick(el.text())
         })
-        .on("mouseover", (ev) => {
-          const el = d3.select(ev.target);
-          el.classed("hovered", true);
-          this.onWordOver(el.text());
+        .on('mouseover', (ev) => {
+          const el = d3.select(ev.target)
+          el.classed('hovered', true)
+          this.onWordOver(el.text())
         })
-        .on("mouseout", (ev) => {
-          const el = d3.select(ev.target);
-          el.classed("hovered", false);
-          this.onWordOut();
-        });
+        .on('mouseout', (ev) => {
+          const el = d3.select(ev.target)
+          el.classed('hovered', false)
+          this.onWordOut()
+        })
     },
   },
-};
+}
 </script>
 
 <template>

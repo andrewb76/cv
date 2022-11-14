@@ -25,9 +25,10 @@
 </template>
 
 <script lang="ts">
-import { IProject } from "@/store/projectsInterfaces";
-import { defineComponent, PropType } from "vue";
-import CvSection from "./CvSection.vue"; // @ is an alias to /src
+// Certification component
+import { defineComponent, PropType } from 'vue'
+import { IProject } from '@/store/projectsInterfaces'
+import CvSection from './CvSection.vue'
 
 export default defineComponent({
   components: {
@@ -39,7 +40,7 @@ export default defineComponent({
       required: true,
     },
   },
-});
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
