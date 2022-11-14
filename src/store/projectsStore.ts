@@ -55,6 +55,7 @@ const initialState = {
   selected: emptyGr,
   currentGroup: emptyGr,
   projects: [] as IProject[],
+  projectDic: {} as IProjects: [] as IProject[],
   projectDic: {} as IProjectDic,
   projectKeys: [] as string[],
   techKeys: [] as TTech[],
