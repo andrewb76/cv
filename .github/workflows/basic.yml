@@ -27,7 +27,8 @@ jobs:
           # start: npx serve -s dist -l 8080
           start: npm run serve
           browser: chrome
-          headed: true
+          headed: false
+          headless: true
           # browser: firefox
         env:
           # pass the Dashboard record key as an environment variable
