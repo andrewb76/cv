@@ -26,32 +26,36 @@
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/andrewb76/cv)
 ![W3C Validation](https://badges.hiptest.com:/w3c-validation/html?targetUrl=https%3A%2F%2Fbutov.online)
 ![GitHub language count](https://img.shields.io/github/languages/count/andrewb76/cv)
+
+[![Code Climate maintainability](https://badges.hiptest.com:/codeclimate/maintainability/andrewb76/cv)](https://codeclimate.com/github/andrewb76/cv/issues)
+[![Code Climate issues](https://img.shields.io/codeclimate/issues/andrewb76/cv)](https://codeclimate.com/github/andrewb76/cv/issues)
+[![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/andrewb76/cv)](https://codeclimate.com/github/andrewb76/cv/issues)
+
+[![CodeFactor](https://www.codefactor.io/repository/github/andrewb76/cv/badge)](https://www.codefactor.io/repository/github/andrewb76/cv)
 ### raw
 [![Maintainability](https://api.codeclimate.com/v1/badges/0c8ff6ee0e0903d3f081/maintainability)](https://codeclimate.com/github/andrewb76/cv/maintainability)
 
 
 
 
-[![Code Climate issues](https://img.shields.io/codeclimate/issues/andrewb76/cv?style=for-the-badge)](https://codeclimate.com/github/andrewb76/cv/issues)
-[![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/andrewb76/cv?style=for-the-badge)](https://codeclimate.com/github/andrewb76/cv/issues)
-[![Code Climate maintainability](https://badges.hiptest.com:/codeclimate/maintainability/andrewb76/cv?style=for-the-badge)](https://codeclimate.com/github/andrewb76/cv/issues)
 
-![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/andrewb76/cv/master?style=for-the-badge)
-![CII Best Practices Level](https://img.shields.io/cii/level/6672?style=for-the-badge)
-![CII Best Practices Tiered Percentage](https://img.shields.io/cii/percentage/6672?style=for-the-badge)
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/andrewb76/cv/master)
+![CII Best Practices Level](https://img.shields.io/cii/level/6672)
+![CII Best Practices Tiered Percentage](https://img.shields.io/cii/percentage/6672)
 ![CII Best Practices Summary](https://img.shields.io/cii/summary/6672)
 
 ----------------------------------------------
-![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/andrewb76/cv/master?style=for-the-badge)
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/andrewb76/cv/master)
 ![CodeFactor Grade](https://www.codefactor.io/repository/github/andrewb76/cv)
 
 
-![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/andrewb76/cv/master?style=for-the-badge)
+![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/andrewb76/cv/master)
 
 --------------------------------------
 https://sonarcloud.io/project/overview?id=andrewb76_cv
 https://uptimerobot.com/dashboard.php#793043159
 https://codeclimate.com/github/andrewb76/cv
+https://www.codefactor.io/repository/github/andrewb76/cv
 
 --------------------------------------
 ## Widgets
