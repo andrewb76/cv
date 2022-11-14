@@ -5,9 +5,9 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    '@vue/airbnb',
+    '@vue/eslint-config-airbnb',
     '@vue/typescript/recommended',
-    'plugin:prettier/recommended'
+    // 'plugin:prettier/recommended'
   ],
   parserOptions: {
     ecmaVersion: 2020
