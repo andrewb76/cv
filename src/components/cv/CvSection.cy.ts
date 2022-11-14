@@ -1,8 +1,8 @@
-import CvSection from "./CvSection.vue";
+import CvSection from './CvSection.vue'
 
-describe("<CvSection />", () => {
-  it("renders", () => {
+describe('<CvSection />', () => {
+  it('renders', () => {
     // see: https://test-utils.vuejs.org/guide/
-    cy.mount(CvSection);
-  });
-});
+    cy.mount(CvSection)
+  })
+})

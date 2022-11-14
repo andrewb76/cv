@@ -5,7 +5,7 @@ reports
 logs
 cypress/screenshots
 cypress/videos
-
+megalinter-reports
 
 # local env files
 .env

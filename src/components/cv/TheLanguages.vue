@@ -9,8 +9,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import CvSection from "./CvSection.vue"; // @ is an alias to /src
+// Languages component
+import { defineComponent, PropType } from 'vue'
+import CvSection from './CvSection.vue'
+import { IEnRu } from '@/store/aboutMe'
 
 export default defineComponent({
   components: {
@@ -18,12 +20,11 @@ export default defineComponent({
   },
   props: {
     data: {
-      type: Array,
+      type: Array as PropType<IEnRu[]>,
       required: true,
     },
   },
-});
+})
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss"></style>

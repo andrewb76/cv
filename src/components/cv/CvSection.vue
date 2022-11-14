@@ -10,18 +10,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "CvSection",
+  name: 'CvSection',
   props: {
     s_name: {
       type: String,
       required: false,
-      default: "",
+      default: '',
     },
   },
-});
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

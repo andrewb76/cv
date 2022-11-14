@@ -4,7 +4,7 @@
    viewBox="0 0 24 24"
    version="1.1"
    id="svg131"
-   sodipodi:docname="bul.svg"
+   sodipodi:docname="bul-selected.svg"
    inkscape:version="1.2.1 (8a69933317, 2022-10-28, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -50,6 +50,13 @@
      cy="12.236376"
      rx="8.3926554"
      ry="8.7071943" />
+  <ellipse
+     style="fill:#000000;stroke-width:1.48992"
+     id="path299"
+     cx="11.895082"
+     cy="12.284029"
+     rx="5.320415"
+     ry="5.5241075" />
   <metadata
      id="metadata317">
     <rdf:RDF>

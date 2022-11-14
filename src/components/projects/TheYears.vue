@@ -22,16 +22,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
-  name: "TheYears",
+  name: 'TheYears',
   emits: {
     setHover() {
-      return true;
+      return true
     },
     onHover() {
-      return true;
+      return true
     },
   },
   props: {
@@ -49,17 +49,17 @@ export default defineComponent({
     },
   },
   setup: () => {
-    const onYearClick = () => true;
-    const onYearMouseOver = () => true;
-    const onYearMouseOut = () => true;
+    const onYearClick = () => true
+    const onYearMouseOver = () => true
+    const onYearMouseOut = () => true
 
     return {
       onYearClick,
       onYearMouseOver,
       onYearMouseOut,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>

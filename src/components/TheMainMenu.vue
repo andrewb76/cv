@@ -12,18 +12,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
-  name: "TheMainMenu",
+  name: 'TheMainMenu',
   props: {
     links: {
       type: Array as PropType<{ name: string; url: string; title: string }[]>,
       required: false,
-      default: () => [{ name: "home", url: "/", title: "Home" }],
+      default: () => [{ name: 'home', url: '/', title: 'Home' }],
     },
   },
-});
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -31,15 +31,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import { IProject } from "@/store/projectsInterfaces";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import { IProject } from '@/store/projectsInterfaces'
 
 export default defineComponent({
-  name: "TheYears",
+  name: 'TheYears',
   emits: {
     changeDialogMode() {
-      return true;
+      return true
     },
   },
   props: {
@@ -63,17 +63,17 @@ export default defineComponent({
   setup: () => {
     const getFlagImgUrl = (cc: string) => {
       try {
-        return require(`@/assets/img/icons/flags/${cc}.png`);
+        return require(`@/assets/img/icons/flags/${cc}.png`)
       } catch {
-        return require(`@/assets/img/icons/flags/ru.png`);
+        return require(`@/assets/img/icons/flags/ru.png`)
       }
-    };
+    }
     const getCertIconUrl = () => {
-      return require(`@/assets/img/icons/certificate-6.svg`);
-    };
-    const onProjectClick = () => true;
-    const onProjectMouseOver = () => true;
-    const onProjectMouseOut = () => true;
+      return require(`@/assets/img/icons/certificate-6.svg`)
+    }
+    const onProjectClick = () => true
+    const onProjectMouseOver = () => true
+    const onProjectMouseOut = () => true
 
     return {
       onProjectClick,
@@ -81,9 +81,9 @@ export default defineComponent({
       onProjectMouseOut,
       getFlagImgUrl,
       getCertIconUrl,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>
@@ -107,7 +107,7 @@ export default defineComponent({
     position: relative;
     display: block;
     overflow: visible;
-    content: "";
+    content: '';
     width: 10px;
     height: 10px;
     left: -20px;

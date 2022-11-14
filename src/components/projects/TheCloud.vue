@@ -13,14 +13,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import TextCloud from "@/components/TextCloud.vue";
-import "vue-resize/dist/vue-resize.css";
+import { defineComponent } from 'vue'
+import TextCloud from '@/components/TextCloud.vue'
+import 'vue-resize/dist/vue-resize.css'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { ResizeObserver } = require("vue-resize");
+const { ResizeObserver } = require('vue-resize')
 
 export default defineComponent({
-  name: "TheCloud",
+  name: 'TheCloud',
   components: {
     TextCloud,
     ResizeObserver,
@@ -42,29 +42,29 @@ export default defineComponent({
   setup(props, context) {
     const handleResize = () => {
       // TODO implement resize functionality
-    };
+    }
 
     const onTechClick = (value: string) => {
-      console.log("setHover", value);
-      context.emit("setHover", { area: "tech", value });
-    };
+      console.log('setHover', value)
+      context.emit('setHover', { area: 'tech', value })
+    }
     const onTechOver = (value: string) => {
-      console.log("onHover", value);
-      context.emit("onHover", { area: "tech", value });
-    };
+      console.log('onHover', value)
+      context.emit('onHover', { area: 'tech', value })
+    }
     const onTechOut = () => {
-      console.log("onHover", " out ");
-      context.emit("setHover", { area: "tech", value: "" });
-    };
+      console.log('onHover', ' out ')
+      context.emit('setHover', { area: 'tech', value: '' })
+    }
     return {
       handleResize,
       onTechClick,
       onTechOver,
       onTechOut,
       fontSizeMapper: (word: { value: number }) => Math.log2(word.value) * 15,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>

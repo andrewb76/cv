@@ -1,8 +1,8 @@
-import CVView from "./CVView.vue";
+import CVView from './CVView.vue'
 
-describe("<CVView />", () => {
-  it("renders", () => {
+describe('<CVView />', () => {
+  it('renders', () => {
     // see: https://test-utils.vuejs.org/guide/
-    cy.mount(CVView);
-  });
-});
+    cy.mount(CVView)
+  })
+})
