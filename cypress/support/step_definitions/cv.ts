@@ -30,6 +30,7 @@ Then(
         .wait(100)
         .should('be.visible')
         .should('have.class', row.section)
+        .wait(100)
     })
   }
 )

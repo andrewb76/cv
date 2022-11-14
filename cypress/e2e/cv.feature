@@ -9,8 +9,8 @@ Scenario: CV page works properly
     | section        |
     | contacts       |
     | summary        |
-    | educations     |
-    | certifications |
     | skills         |
     | languages      |
     | projects       |
+    | certifications |
+    | educations     |
