@@ -26,6 +26,7 @@ Then(
     sections.hashes().forEach((row) => {
       cy.get(`section.${row.section}`)
         .scrollIntoView()
+        .wait(300)
         .should('be.visible')
         .should('have.class', row.section)
     })
