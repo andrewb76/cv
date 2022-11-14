@@ -14,6 +14,7 @@ export default defineConfig({
 
   e2e: {
     baseUrl: 'http://localhost:8080',
+    defaultCommandTimeout: 10000,
     chromeWebSecurity: false,
     excludeSpecPattern: '*.{js|ts}',
     specPattern: 'cypress/**/*.feature',
