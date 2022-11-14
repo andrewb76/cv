@@ -1,6 +1,11 @@
 ---
 name: End-to-end tests
 on: [push]
+env: # Comment env block if you do not want to apply fixes
+  # JSONBIN access vars
+  VUE_APP_JSONBIN_X_ACCESS_KEY: \$2b\$10\$/gwhSdy2//J8hW7MYV1ZQOPQeLg4obm1QuKQcSPwvDAQx034GZqRu
+  VUE_APP_JSONBIN_CERTIFIICATES_ID: 636db99f2b3499323bfc386a
+  VUE_APP_JSONBIN_PROJECTS_ID: 636db9412b3499323bfc3829
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
