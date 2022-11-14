@@ -25,8 +25,9 @@ Then(
   (sections: DataTable) => {
     sections.hashes().forEach((row) => {
       cy.get(`section.${row.section}`)
+        .wait(100)
         .scrollIntoView()
-        .wait(300)
+        .wait(100)
         .should('be.visible')
         .should('have.class', row.section)
     })
