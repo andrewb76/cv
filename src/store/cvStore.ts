@@ -9,7 +9,6 @@ const JSONBIN_X_ACCESS_KEY = process.env.VUE_APP_JSONBIN_X_ACCESS_KEY || ''
 export const useCVStore = defineStore('cv', {
   state: () => ({
     isLoading: true,
-    isLoading: true,
     iAm: {
       ...iAm,
       certificates: [] as IProject[]
