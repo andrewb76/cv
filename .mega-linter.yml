@@ -2,8 +2,38 @@
 # See all available variables at https://oxsecurity.github.io/megalinter/configuration/ and in linters documentation
 
 APPLY_FIXES: all # all, none, or list of linter keys
-# ENABLE: # If you use ENABLE variable, all other languages/formats/tooling-formats will be disabled by default
-# ENABLE_LINTERS: # If you use ENABLE_LINTERS variable, all other linters will be disabled by default
+ENABLE: # If you use ENABLE variable, all other languages/formats/tooling-formats will be disabled by default
+- ACTION_ACTIONLINT
+- COPYPASTE_JSCPD
+- CSS_STYLELINT
+- CSS_SCSS_LINT
+- GHERKIN_GHERKIN_LINT
+- HTML_DJLINT
+- HTML_HTMLHINT
+- JAVASCRIPT_ES
+- JAVASCRIPT_STANDARD
+- JSON_JSONLINT
+- JSON_ESLINT_PLUGIN_JSONC
+- JSON_V8R
+- JSON_PRETTIER
+- MARKDOWN_MARKDOWNLINT
+- MARKDOWN_MARKDOWN_LINK_CHECK
+- MARKDOWN_MARKDOWN_TABLE_FORMATTER
+- REPOSITORY_CHECKOV
+- REPOSITORY_GIT_DIFF
+- REPOSITORY_GITLEAKS
+- REPOSITORY_SECRETLINT
+- REPOSITORY_TRIVY
+- SPELL_MISSPELL
+- SPELL_CSPELL
+- TYPESCRIPT_ES
+- TYPESCRIPT_STANDARD
+- YAML_PRETTIER
+- YAML_YAMLLINT
+- YAML_V8R
+
+# ENABLE_LINTERS: # If you use ENABLE_LINTERS variable
+# all other linters will be disabled by default
 # DISABLE:
 # - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
 # - SPELL # Uncomment to disable checks of spelling mistakes
