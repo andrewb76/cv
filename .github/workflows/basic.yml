@@ -25,7 +25,7 @@ jobs:
           install-command: yarn
           build: yarn build
           # start: npx serve -s dist -l 8080
-          start: npm run serve; echo $VUE_APP_JSONBIN_X_ACCESS_KEY; echo $VUE_APP_JSONBIN_PROJECTS_ID;
+          start: npm run serve
           browser: chrome
           headed: true
           # browser: firefox
