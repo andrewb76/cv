@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    '@vue/airbnb',
     '@vue/typescript/recommended',
     'plugin:prettier/recommended'
   ],
