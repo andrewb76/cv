@@ -39,59 +39,59 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
-import { useProjectsStore } from "@/store/projectsStore";
-import { Subject } from "rxjs";
-import { debounceTime } from "rxjs/operators";
-import { config } from "@/config";
-import TheProjects from "@/components/projects/TheProjects.vue";
-import TheYears from "@/components/projects/TheYears.vue";
-import TheCloud from "@/components/projects/TheCloud.vue";
+import { defineComponent, onMounted } from 'vue'
+import { Subject } from 'rxjs'
+import { debounceTime } from 'rxjs/operators'
+import { useProjectsStore } from '@/store/projectsStore'
+import { config } from '@/config'
+import TheProjects from '@/components/projects/TheProjects.vue'
+import TheYears from '@/components/projects/TheYears.vue'
+import TheCloud from '@/components/projects/TheCloud.vue'
 
 export default defineComponent({
-  name: "ProjectsView",
+  name: 'ProjectsView',
   components: {
     TheProjects,
     TheYears,
     TheCloud,
   },
   setup() {
-    const projectsStore = useProjectsStore();
-    const hover$ = new Subject();
+    const projectsStore = useProjectsStore()
+    const hover$ = new Subject()
 
     onMounted(() => {
-      projectsStore.init();
+      projectsStore.init()
 
       hover$.pipe(debounceTime(config.debounceTime)).subscribe((params) => {
-        projectsStore.setHover(params as { area: string; value: string });
-      });
-    });
+        projectsStore.setHover(params as { area: string; value: string })
+      })
+    })
 
     const onHover = (params: { area: string; value: string }) => {
-      hover$.next(params);
-    };
+      hover$.next(params)
+    }
     const setHover = () => {
-      projectsStore.changeDialogMode();
-    };
+      projectsStore.changeDialogMode()
+    }
     const changeDialogMode = () => {
-      projectsStore.changeDialogMode();
-    };
+      projectsStore.changeDialogMode()
+    }
 
     return {
       projectsStore,
       onHover,
       setHover,
       changeDialogMode,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>
 .portfolio {
   height: 100vh;
   overflow: hidden;
-  background-image: url("~@/assets/img/city-wallpaper-18.jpg");
+  background-image: url('~@/assets/img/city-wallpaper-18.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

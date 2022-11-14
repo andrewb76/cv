@@ -5,36 +5,36 @@
         <p class="text-left">{{ data.city[$i18n.locale] }}</p>
         <p class="text-left text-sm">{{ data.address[$i18n.locale] }}</p>
         <p class="text-left text-sm">
-          <a target="_blank" :href="data.contacts.home.url">
-            {{ data.contacts.home.title }}
+          <a target="_blank" :href="data.home.url">
+            {{ data.home.title }}
           </a>
         </p>
         <a
           target="_blank"
-          :href="data.contacts.telegram.url"
-          :v-text="data.contacts.telegram.title"
+          :href="data.telegram.url"
+          :v-text="data.telegram.title"
         />
       </div>
       <div class="grow">
-        <p class="text-right">{{ data.contacts.phone.title }}</p>
+        <p class="text-right">{{ data.phone.title }}</p>
         <p class="text-right text-sm">
-          <a target="_blank" :href="data.contacts.email.url">
-            {{ data.contacts.email.title }}
+          <a target="_blank" :href="data.email.url">
+            {{ data.email.title }}
           </a>
         </p>
         <p class="text-right text-sm">
-          <a target="_blank" :href="data.contacts.telegram.url">
-            {{ data.contacts.telegram.title }}
+          <a target="_blank" :href="data.telegram.url">
+            {{ data.telegram.title }}
           </a>
         </p>
         <p class="text-right text-sm">
-          <a target="_blank" :href="data.contacts.github.url">
-            {{ data.contacts.github.title }}
+          <a target="_blank" :href="data.github.url">
+            {{ data.github.title }}
           </a>
         </p>
         <p class="text-right text-sm">
-          <a target="_blank" :href="data.contacts.linkedIn.url">
-            {{ data.contacts.linkedIn.title }}
+          <a target="_blank" :href="data.linkedIn.url">
+            {{ data.linkedIn.title }}
           </a>
         </p>
       </div>
@@ -43,8 +43,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import CvSection from "./CvSection.vue"; // @ is an alias to /src
+import { defineComponent, PropType } from 'vue'
+import CvSection from './CvSection.vue' // @ is an alias to /src
+import { IContacts } from '@/store/aboutMe'
 
 export default defineComponent({
   components: {
@@ -52,11 +53,11 @@ export default defineComponent({
   },
   props: {
     data: {
-      type: Object,
+      type: Object as PropType<IContacts>,
       required: true,
     },
   },
-});
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

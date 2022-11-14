@@ -1,4 +1,5 @@
-### Test Plan
+
+# Test Plan
 
 
 Критерии
@@ -16,7 +17,7 @@
 - как будем тестировать
 - когда будем тестировать
 
-### Test Strategy
+## Test Strategy
 
 - test env
 - risk analyze

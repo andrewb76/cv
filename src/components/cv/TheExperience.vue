@@ -28,8 +28,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import CvSection from "./CvSection.vue"; // @ is an alias to /src
+// Experiences component
+import { defineComponent, PropType } from 'vue'
+import CvSection from './CvSection.vue'
+import { IExperience } from '@/store/myExperience'
 
 export default defineComponent({
   components: {
@@ -37,12 +39,11 @@ export default defineComponent({
   },
   props: {
     data: {
-      type: Object,
+      type: Object as PropType<IExperience>,
       required: true,
     },
   },
-});
+})
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss"></style>

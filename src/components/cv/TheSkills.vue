@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import CvSection from "./CvSection.vue"; // @ is an alias to /src
+import { defineComponent, ref } from 'vue'
+import CvSection from './CvSection.vue' // @ is an alias to /src
 
 export default defineComponent({
   components: {
@@ -34,22 +34,22 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const hoveredGroup = ref("");
+    const hoveredGroup = ref('')
     const onMouseOver = (gr: string) => {
-      hoveredGroup.value = gr;
-    };
+      hoveredGroup.value = gr
+    }
     const onMouseOut = () => {
-      hoveredGroup.value = "";
-    };
+      hoveredGroup.value = ''
+    }
 
     return {
       onMouseOver,
       onMouseOut,
       hoveredGroup,
-      skills: props.data.map((ss) => (ss as string[]).join(" ")),
-    };
+      skills: props.data.map((ss) => (ss as string[]).join(' ')),
+    }
   },
-});
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

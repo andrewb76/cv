@@ -1,3 +1,3 @@
 export const config = {
-  debounceTime: 600,
-};
+  debounceTime: 600
+}
