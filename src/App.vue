@@ -1,20 +1,10 @@
 <template>
-  <!-- <the-main-menu class="main-menu fixed top-10 left-10" :links="links" /> -->
-  <!-- <the-locale-selector class="locale-selector top-5 right-0 fixed" /> -->
-  <!-- <transition name="fade" mode="out-in"> -->
   <router-view />
-  <!-- </transition> -->
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-// import TheMainMenu from "@/components/TheMainMenu.vue";
-// import TheLocaleSelector from "@/components/TheLocaleSelector.vue";
 
 export default defineComponent({
-  components: {
-    // TheMainMenu,
-    // TheLocaleSelector,
-  },
   setup: () => {
     return {
       links: [
