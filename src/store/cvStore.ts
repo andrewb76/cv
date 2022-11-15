@@ -16,7 +16,6 @@ export const useCVStore = defineStore('cv', {
         getExperience(),
         getCertificates()
       ]).then(([experience, certificates]) => {
-        console.log([experience, certificates]);
         this.iAm.experience = (experience instanceof Array<IExperience> ? experience : []) as Array<IExperience>
         this.iAm.certificates = certificates instanceof Array<IProject> ? certificates : []
       })
