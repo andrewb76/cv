@@ -1,3 +1,4 @@
+import { readPdf } from './cypress/scripts/readPdf'
 import { defineConfig } from 'cypress'
 import createBundler from '@bahmutov/cypress-esbuild-preprocessor'
 import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor'
@@ -14,6 +15,7 @@ export default defineConfig({
 
   e2e: {
     baseUrl: 'http://localhost:8080',
+    defaultCommandTimeout: 20000,
     chromeWebSecurity: false,
     excludeSpecPattern: '*.{js|ts}',
     specPattern: 'cypress/**/*.feature',
@@ -30,6 +32,9 @@ export default defineConfig({
           plugins: [createEsbuildPlugin(config)]
         })
       )
+      on('task', {
+        readPdf
+      })
 
       // Make sure to return the config object as it might have been modified by the plugin.
       return config
