@@ -138,16 +138,9 @@ export const useProjectsStore = defineStore('projects', {
     init (): Promise<void> {
       return getBinJsonById(JSONBIN_PROJECTS_ID)
         .then((projects) => {
-          if (!Array.isArray(projects)) {
-            this.projects = []
-          } else {
-            this.projects = projectsFromJson(projects)
-          }
+          this.projects = projects instanceof Array<IProjectJson> ? projectsFromJson(projects) : []
           this.projectDic = this.projects.reduce(
-            (acc: IProjectDic, pr: IProject) => ({
-              ...acc,
-              [pr.key]: pr
-            }),
+            (acc: IProjectDic, pr: IProject) => ({ ...acc, [pr.key]: pr }),
             {} as IProjectDic
           )
           this.years = R.pipe(
