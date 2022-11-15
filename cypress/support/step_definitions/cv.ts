@@ -45,6 +45,14 @@ Then(
       linkBox.get(`a.${row.docType}`)
         .should('be.visible')
         .should('have.class', 'cvDocLink')
+        .should('have.attr', 'target', '_blank')
+        .then(link => {
+          cy
+            .request(link.prop('href'))
+            .its('body')
+            .should('include', 'Andrew')
+            .should('include', 'Butov')
+        });
     })
   }
 )

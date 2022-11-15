@@ -53,7 +53,7 @@
               src="https://cdn-icons-png.flaticon.com/128/281/281760.png"
             />
           </a>
-          <a class="cvDocLink pdf" :href="`/cv/AndrewButov_CV_2022_${$i18n.locale}.pdf`">
+          <a class="cvDocLink pdf" target="_blank" :href="`/cv/AndrewButov_CV_2022_${$i18n.locale}.pdf`">
             <img
               class="w-16"
               :alt="data.download.google.title[$i18n.locale]"
