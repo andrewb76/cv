@@ -7,6 +7,9 @@ import * as Sentry from '@sentry/vue'
 import { BrowserTracing } from '@sentry/tracing'
 import Hotjar from 'vue-hotjar'
 import i18n from './i18n'
+import { config } from '@/config'
+
+const HOTJAR_ID = config.services.hotjar.id
 
 const pinia = createPinia()
 
@@ -31,6 +34,6 @@ app
   .use(router)
   .use(pinia)
   .use(Hotjar, {
-    id: '3240389' // TODO: moove to env Hotjar Site ID
+    id: HOTJAR_ID
   })
   .mount('#app')

@@ -9,8 +9,8 @@
 <script lang="ts">
 // The Educations component
 import { defineComponent, PropType } from 'vue'
-import { IProject } from '@/store/projectsInterfaces'
-import CvSection from './CvSection.vue' // @ is an alias to /src
+import { IProject } from '@/store/cvInterfaces'
+import CvSection from './CvSection.vue'
 
 export default defineComponent({
   components: {

@@ -1,0 +1,176 @@
+[
+  {
+    "key": "cu_mongo",
+    "country": "us",
+    "img": "cu_mongo.png",
+    "url": "https://university.mongodb.com/course_completion/906576af9f244bd0b90a28bd8c1a80b4/printable",
+    "short": "MongoDB University",
+    "title": {
+      "ru": "MongoDB University",
+      "en": "MongoDB University"
+    },
+    "description": {
+      "ru": "M101JS: MongoDB for Node.js Developers",
+      "en": "M101JS: MongoDB для Node.js Разработчиков"
+    },
+    "techStack": [
+      "mongodb",
+      "nodejs",
+      "js"
+    ],
+    "from": {},
+    "to": {}
+  },
+  {
+    "key": "cu_codecamp_front",
+    "country": "us",
+    "img": "cu_codecamp_front.png",
+    "url": "https://www.freecodecamp.com/andrewb76/front-end-certification",
+    "short": "CodeCamp FE",
+    "title": {
+      "ru": "CodeCamp",
+      "en": "CodeCamp"
+    },
+    "description": {
+      "ru": "Курс по Фронт разработке",
+      "en": "FrontEnd Development Course"
+    },
+    "techStack": [
+      "html",
+      "css",
+      "js",
+      "bootstrap",
+      "jquery"
+    ],
+    "from": {},
+    "to": {}
+  },
+  {
+    "key": "cu_stepik_python",
+    "country": "ru",
+    "img": "cu_stepik_python.png",
+    "url": "https://stepik.org/cert/107778",
+    "short": "STEPIK Python",
+    "title": {
+      "ru": "Институт БиоИнформатики",
+      "en": "BioInformatics University"
+    },
+    "description": {
+      "ru": "Курс разработки на Python",
+      "en": "Python development Course"
+    },
+    "techStack": [
+      "python"
+    ],
+    "from": {},
+    "to": {}
+  },
+  {
+    "key": "cu_codecamp_data_visualization",
+    "country": "us",
+    "img": "cu_codecamp_data_visualization.png",
+    "url": "https://www.freecodecamp.org/certification/andrewb76/data-visualization",
+    "short": "Data Vis",
+    "title": {
+      "ru": "CodeCamp",
+      "en": "CodeCamp"
+    },
+    "description": {
+      "ru": "Визуализация Данных на D3",
+      "en": "Data Visualization with D3"
+    },
+    "techStack": [
+      "html",
+      "css",
+      "js",
+      "svg",
+      "d3"
+    ],
+    "from": {},
+    "to": {}
+  },
+  {
+    "key": "cu_codecamp_js",
+    "country": "us",
+    "img": "cu_codecamp_js.png",
+    "url": "https://freecodecamp.org/certification/andrewb76/javascript-algorithms-and-data-structures",
+    "short": "JS Algorithms",
+    "title": {
+      "ru": "CodeCamp",
+      "en": "CodeCamp"
+    },
+    "description": {
+      "ru": "JavaScript Алгоритмы и Структуры Данных",
+      "en": "JavaScript Algorithms and Data Structures"
+    },
+    "techStack": [
+      "js"
+    ],
+    "from": {},
+    "to": {}
+  },
+  {
+    "key": "cu_codecamp_front_lib",
+    "country": "us",
+    "img": "cu_codecamp_front_lib.png",
+    "url": "https://freecodecamp.org/certification/andrewb76/front-end-development-libraries",
+    "short": "CodeCamp FE Lib",
+    "title": {
+      "ru": "CodeCamp",
+      "en": "CodeCamp"
+    },
+    "description": {
+      "ru": "Библиотеки для Фронт Разработки",
+      "en": "Front End Development Libraries"
+    },
+    "techStack": [
+      "sass",
+      "jquery",
+      "react",
+      "redux",
+      "bootstrap"
+    ],
+    "from": {},
+    "to": {}
+  },
+  {
+    "key": "cu_tau_automation_with_git",
+    "country": "us",
+    "img": "cu_tau_automation_with_git.png",
+    "url": "https://testautomationu.applitools.com/certificate/?id=3957c319",
+    "short": "Automation with GIT",
+    "title": {
+      "ru": "TestAutomationUniversity",
+      "en": "TestAutomationUniversity"
+    },
+    "description": {
+      "ru": "Git в автоматизации тестирования",
+      "en": "Source Control for Test Automation with Git"
+    },
+    "techStack": [
+      "git"
+    ],
+    "from": {},
+    "to": {}
+  },
+  {
+    "key": "cu_ml_docker",
+    "country": "us",
+    "img": "cu_ml_docker.png",
+    "url": "https://www.mindluster.com/student/certificate/718402762",
+    "short": "Exploring Docker",
+    "title": {
+      "ru": "Mind Luster",
+      "en": "Mind Luster"
+    },
+    "description": {
+      "ru": "Изучение Docker",
+      "en": " Exploring Docker"
+    },
+    "techStack": [
+      "docker"
+    ],
+    "from": {},
+    "to": {}
+  }
+]
