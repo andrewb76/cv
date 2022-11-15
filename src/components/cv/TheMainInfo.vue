@@ -1,71 +1,71 @@
 <template>
-  <div class="shadow rounded-xl overflow-hidden">
-    <!-- Start User Block -->
-    <div class="h-32 bg-cover header-top"></div>
-    <div class="pt-14 p-7 bg-white relative flex flex-col items-stretch">
-      <a href="/"
-        ><img
-          src="@/assets/img/avatar_ef_3.jpeg"
-          alt="Avatar"
-          class="user-photo"
-      /></a>
-      <div class="text-lg font-semibold mb-1.5">
-        {{ data.name[$i18n.locale] }}
+  <section class="main block-section">
+    <div class="shadow rounded-xl overflow-hidden">
+      <!-- Start User Block -->
+      <div class="h-32 bg-cover header-top"></div>
+      <div class="pt-14 p-7 bg-white relative flex flex-col items-stretch">
+        <a href="/"
+          ><img
+            src="@/assets/img/avatar_ef_3.jpeg"
+            alt="Avatar"
+            class="user-photo"
+        /></a>
+        <div class="text-lg font-semibold mb-1.5">
+          {{ data.name[$i18n.locale] }}
+        </div>
+        <div class="text-sm text-gray-400 mb-7">
+          {{ data.bd[$i18n.locale] }}
+        </div>
+        <div class="text-mm text-gray-400 mb-7 font-bold">
+          {{ data.position[$i18n.locale] }}
+        </div>
+        <h3 class="w-full text-center">
+          {{ $t('CV.downloadBtnText') }}
+        </h3>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 self-center mb-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          ></path>
+        </svg>
+        <div class="download-links flex group h-12 justify-center">
+          <a class="cvDocLink word" target="_blank" :href="data.download.word.url[$i18n.locale]">
+            <img
+              class="w-16"
+              :alt="data.download.word.title[$i18n.locale]"
+              :title="data.download.word.title[$i18n.locale]"
+              src="https://cdn-icons-png.flaticon.com/128/888/888883.png"
+            />
+          </a>
+          <a class="cvDocLink gdoc" target="_blank" :href="data.download.google.url[$i18n.locale]">
+            <img
+              class="w-16"
+              :alt="data.download.google.title[$i18n.locale]"
+              :title="data.download.google.title[$i18n.locale]"
+              src="https://cdn-icons-png.flaticon.com/128/281/281760.png"
+            />
+          </a>
+          <a class="cvDocLink pdf" target="_blank" :href="`/cv/AndrewButov_CV_2022_${$i18n.locale}.pdf`">
+            <img
+              class="w-16"
+              :alt="data.download.google.title[$i18n.locale]"
+              :title="data.download.google.title[$i18n.locale]"
+              src="https://cdn-icons-png.flaticon.com/128/4726/4726010.png"
+            />
+          </a>
+        </div>
+        <the-locale-selector class="locale-selector top-5 right-5 absolute" />
       </div>
-      <div class="text-sm text-gray-400 mb-7">
-        {{ data.bd[$i18n.locale] }}
-      </div>
-      <div class="text-mm text-gray-400 mb-7 font-bold">
-        {{ data.position[$i18n.locale] }}
-      </div>
-      <h3 class="w-full text-center">
-        {{ $t('CV.downloadBtnText') }}
-      </h3>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 self-center mb-5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.8"
-          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-        ></path>
-      </svg>
-      <div class="flex group h-12 justify-center">
-        <a target="_blank" :href="data.download.word.url[$i18n.locale]">
-          <img
-            class="w-16"
-            :alt="data.download.word.title[$i18n.locale]"
-            :title="data.download.word.title[$i18n.locale]"
-            src="https://cdn-icons-png.flaticon.com/128/888/888883.png"
-          />
-        </a>
-        <a target="_blank" :href="data.download.google.url[$i18n.locale]">
-          <img
-            class="w-16"
-            :alt="data.download.google.title[$i18n.locale]"
-            :title="data.download.google.title[$i18n.locale]"
-            src="https://cdn-icons-png.flaticon.com/128/281/281760.png"
-          />
-        </a>
-        <a :href="`/cv/AndrewButov_CV_2022_${$i18n.locale}.pdf`">
-          <img
-            class="w-16"
-            :alt="data.download.google.title[$i18n.locale]"
-            :title="data.download.google.title[$i18n.locale]"
-            src="https://cdn-icons-png.flaticon.com/128/4726/4726010.png"
-          />
-        </a>
-
-        <button class="download-btn-icon"></button>
-      </div>
-      <the-locale-selector class="locale-selector top-5 right-5 absolute" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
