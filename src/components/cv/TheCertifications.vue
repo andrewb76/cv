@@ -27,7 +27,7 @@
 <script lang="ts">
 // Certification component
 import { defineComponent, PropType } from 'vue'
-import { IProject } from '@/store/projectsInterfaces'
+import { IProject } from '@/store/cvInterfaces'
 import CvSection from './CvSection.vue'
 
 export default defineComponent({

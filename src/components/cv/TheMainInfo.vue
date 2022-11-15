@@ -71,7 +71,7 @@
 <script lang="ts">
 // Main Info component
 import { defineComponent, PropType } from 'vue'
-import { IiAm } from '@/store/aboutMe'
+import { IiAm } from '@/store/cvInterfaces'
 import TheLocaleSelector from '@/components/TheLocaleSelector.vue'
 
 export default defineComponent({

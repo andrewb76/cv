@@ -41,7 +41,7 @@
 <script lang="ts">
 import { defineComponent, PropType, ref, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { IProject } from '@/store/projectsInterfaces'
+import { IProject } from '@/store/cvInterfaces'
 import TheCertificationsModalContent from '@/components/cv/modal/TheCertificationsModalContent.vue'
 import ModalTechStack from '@/components/cv/modal/ModalTechStack.vue'
 import ModalMixin from '@/components/cv/modal/ModalMixin.vue'

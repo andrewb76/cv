@@ -1,7 +1,7 @@
 <template>
   <cv-section s_name="experience">
     <div
-      v-for="company in data.list"
+      v-for="company in data"
       :key="company.company['en']"
       class="company m-4"
     >
@@ -31,7 +31,7 @@
 // Experiences component
 import { defineComponent, PropType } from 'vue'
 import CvSection from './CvSection.vue'
-import { IExperience } from '@/store/myExperience'
+import { IExperience } from '@/store/cvInterfaces'
 
 export default defineComponent({
   components: {
@@ -39,7 +39,7 @@ export default defineComponent({
   },
   props: {
     data: {
-      type: Object as PropType<IExperience>,
+      type: Array as PropType<IExperience[]>,
       required: true,
     },
   },
