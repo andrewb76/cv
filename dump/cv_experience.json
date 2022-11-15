@@ -81,12 +81,12 @@
       "ru": "Инженер"
     },
     "from": {
-      "en": "August 2020",
-      "ru": "Август 2020"
+      "en": "August 2013",
+      "ru": "Август 2013"
     },
     "to": {
-      "en": "November 2021",
-      "ru": "Ноябрь 2021"
+      "en": "November 2020",
+      "ru": "Ноябрь 2020"
     },
     "responsibilities": [
       {
@@ -162,8 +162,8 @@
     },
     "responsibilities": [
       {
-        "en": "FMCJ Distributing company \"QP Crimea\". Direct and implement the operational strategy, business processes, and systems for overall distribution operations,\n        including order fulfillment, warehousing, inventory management, logistic and transportation. Implements data-driven analytical tools and systems to\n        continuously monitor operations, identify inefficiencies, and develop optimization strategies.",
-        "ru": "FMCJ Дистрибьюторская компания \"QP Крым\". Разработка и внедрение стратегии развития, автоматизация бизнес-процессов в сфере отношения с поставщиками,\n        оптимизирование и управление складскими запасами, логистики и транспортировки, товарного кредитования клиентов. Занимался внедрением аналитических инструментов\n        и практик на основе анализа оперативных данных. Непрерывный мониторинг операций, выявление неэффективности и разработка стратегий оптимизации."
+        "en": "FMCJ Distributing company \"QP Crimea\" ltd. Direct and implement the operational strategy, business processes, and systems for overall distribution operations,\n        including order fulfillment, warehousing, inventory management, logistic and transportation. Implements data-driven analytical tools and systems to\n        continuously monitor operations, identify inefficiencies, and develop optimization strategies.",
+        "ru": "FMCJ Дистрибьюторская компания ООО \"QP Крым\". Разработка и внедрение стратегии развития, автоматизация бизнес-процессов в сфере отношения с поставщиками,\n        оптимизирование и управление складскими запасами, логистики и транспортировки, товарного кредитования клиентов. Занимался внедрением аналитических инструментов\n        и практик на основе анализа оперативных данных. Непрерывный мониторинг операций, выявление неэффективности и разработка стратегий оптимизации."
       }
     ]
   },
@@ -186,7 +186,7 @@
     },
     "responsibilities": [
       {
-        "en": "From 1994 to 1997 I worked at the Republican Information and Computing Center of the Crimean Ministry of Health.\n        Developed and maintained a program for the registration of victims of the Chernobyl accident.\n        From 1997 to 2000 he worked in the representative office of Oxford University Press in Ukraine, dealing with all aspects related to IT,\n        accounting, logistics and business optimization. Implemented the 1C system,\n        which allowed to significantly reduce the development time compared to the development of products in C++, Delphi and a similar stack.\n        Until 2008, he was mainly involved in projects based on 1C for automation and optimization of business processes of various companies and enterprises of the Crimea.",
+        "en": "From 1994 to 1997 I worked at the Republican Information and Computing Center of the Crimean Ministry of Health.\n        Developed and maintained a program for the registration of victims of the Chernobyl accident.\n        From 1997 to 2000 I worked in the representative office of Oxford University Press in Ukraine, dealing with all aspects related to IT,\n        accounting, logistics and business optimization. Implemented the 1C system,\n        which allowed to significantly reduce the development time compared to the development of products in C++, Delphi and a similar stack.\n        Until 2008, I was mainly involved in projects based on 1C for automation and optimization of business processes of various companies and enterprises of the Crimea.",
         "ru": "С 1994 по 97 работал в Респупликанском информационно-вычислительном центре министерства здравоохранения Крыма.\n        Разработал и потдерживал программу по учету пострадавших от Чернобыльской аварии. С 97 по 2000 работал в  представительстве Оксфорд Университи Пресс на Украине,\n        занимался всеми аспектами связанными с АйТи, учетом, логистикой и оптимизацией бизнеса. Внедрил систему 1С что позволило вразы сокротить время разработки\n        по сравнению с разработкой продуктов на С++,  Делфи и похожем стеке. Вплоть до 2008 в основном занимался проектами на базе 1С по автоматицации\n        и оптимизации бизнесс процессов различных компаний и предприятий Крыма."
       }
     ]
