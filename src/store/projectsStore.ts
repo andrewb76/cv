@@ -64,25 +64,6 @@ interface ISetHoverParams {
   value: string
 }
 
-const getBinJsonById = (id: string) => {
-  const projectsDataUrl = `${JSON_BIN_ROOT}/b/${id}?meta=false`
-
-  return fetch(projectsDataUrl, {
-    headers: {
-      'X-Access-Key': JSONBIN_X_ACCESS_KEY
-    }
-  })
-  .then((response) => response.json())
-}
-
-const projectsFromJson = (arr: IProjectJson[]): IProject[] => arr.map(
-  (project: IProjectJson): IProject => ({
-    ...project,
-    from: new Date(project.from[0], project.from[1]),
-    to: new Date(project.to[0], project.to[1])
-  })
-)
-
 export const useProjectsStore = defineStore('projects', {
   state: () => ({ ...initialState }),
   getters: {
