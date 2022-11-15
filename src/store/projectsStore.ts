@@ -1,11 +1,9 @@
 import * as R from 'ramda'
 import { defineStore } from 'pinia'
-import { IProject, IProjectJson, IProjectDic } from '@/store/projectsInterfaces'
+import { IProject, IProjectDic } from '@/store/projectsInterfaces'
+import { getProjects } from './helpers'
 
-const JSON_BIN_ROOT = 'https://api.jsonbin.io/v3'
 const EDUCATION_PROJECT_KEY = 'ed_tnu'
-const JSONBIN_PROJECTS_ID = process.env.VUE_APP_JSONBIN_PROJECTS_ID || ''
-const JSONBIN_X_ACCESS_KEY = process.env.VUE_APP_JSONBIN_X_ACCESS_KEY || ''
 
 const getPrRage = (pr: IProject) =>
   R.range(pr.from.getFullYear(), (pr.to || pr.from).getFullYear() + 1).map(
@@ -66,25 +64,6 @@ interface ISetHoverParams {
   value: string
 }
 
-const getBinJsonById = (id: string) => {
-  const projectsDataUrl = `${JSON_BIN_ROOT}/b/${id}?meta=false`
-
-  return fetch(projectsDataUrl, {
-    headers: {
-      'X-Access-Key': JSONBIN_X_ACCESS_KEY
-    }
-  })
-  .then((response) => response.json())
-}
-
-const projectsFromJson = (arr: IProjectJson[]): IProject[] => arr.map(
-  (project: IProjectJson): IProject => ({
-    ...project,
-    from: new Date(project.from[0], project.from[1]),
-    to: new Date(project.to[0], project.to[1])
-  })
-)
-
 export const useProjectsStore = defineStore('projects', {
   state: () => ({ ...initialState }),
   getters: {
@@ -136,9 +115,9 @@ export const useProjectsStore = defineStore('projects', {
       this.projectKeys = []
     },
     init (): Promise<void> {
-      return getBinJsonById(JSONBIN_PROJECTS_ID)
+      return getProjects()
         .then((projects) => {
-          this.projects = projects instanceof Array<IProjectJson> ? projectsFromJson(projects) : []
+          this.projects = projects instanceof Array<IProject> ? projects : []
           this.projectDic = this.projects.reduce(
             (acc: IProjectDic, pr: IProject) => ({ ...acc, [pr.key]: pr }),
             {} as IProjectDic
