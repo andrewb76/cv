@@ -18,8 +18,8 @@
       "nodejs",
       "js"
     ],
-    "from": {},
-    "to": {}
+    "from": [2014, 3],
+    "to": [2014, 3]
   },
   {
     "key": "cu_codecamp_front",
@@ -42,8 +42,8 @@
       "bootstrap",
       "jquery"
     ],
-    "from": {},
-    "to": {}
+    "from": [2017, 4],
+    "to": [2017, 4]
   },
   {
     "key": "cu_stepik_python",
@@ -62,8 +62,8 @@
     "techStack": [
       "python"
     ],
-    "from": {},
-    "to": {}
+    "from": [2018, 5],
+    "to": [2018, 5]
   },
   {
     "key": "cu_codecamp_data_visualization",
@@ -86,8 +86,8 @@
       "svg",
       "d3"
     ],
-    "from": {},
-    "to": {}
+    "from": [2022, 10],
+    "to": [2022, 10]
   },
   {
     "key": "cu_codecamp_js",
@@ -106,8 +106,8 @@
     "techStack": [
       "js"
     ],
-    "from": {},
-    "to": {}
+    "from": [2022, 10],
+    "to": [2022, 10]
   },
   {
     "key": "cu_codecamp_front_lib",
@@ -130,8 +130,8 @@
       "redux",
       "bootstrap"
     ],
-    "from": {},
-    "to": {}
+    "from": [2022, 10],
+    "to": [2022, 10]
   },
   {
     "key": "cu_tau_automation_with_git",
@@ -150,8 +150,8 @@
     "techStack": [
       "git"
     ],
-    "from": {},
-    "to": {}
+    "from": [2022, 10],
+    "to": [2022, 10]
   },
   {
     "key": "cu_ml_docker",
@@ -164,13 +164,13 @@
       "en": "Mind Luster"
     },
     "description": {
-      "ru": "Изучение Docker",
+      "ru": "Exploring Docker",
       "en": " Exploring Docker"
     },
     "techStack": [
       "docker"
     ],
-    "from": {},
-    "to": {}
+    "from": [2022, 10],
+    "to": [2022, 10]
   }
 ]

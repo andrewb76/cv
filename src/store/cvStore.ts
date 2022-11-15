@@ -1,7 +1,7 @@
 import { IExperience } from './cvInterfaces'
 import { defineStore } from 'pinia'
 import { IProject } from '@/store/cvInterfaces'
-import { iAm } from './aboutMe' // TODO: move to jsonbin
+import { iAm } from './aboutMe'
 import { getCertificates, getExperience } from './helpers'
 
 export const useCVStore = defineStore('cv', {
