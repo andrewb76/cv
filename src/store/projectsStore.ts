@@ -1,6 +1,6 @@
 import * as R from 'ramda'
 import { defineStore } from 'pinia'
-import { IProject, IProjectDic } from '@/store/projectsInterfaces'
+import { IProject, IProjectDic } from '@/store/cvInterfaces'
 import { getProjects } from './helpers'
 
 const EDUCATION_PROJECT_KEY = 'ed_tnu'

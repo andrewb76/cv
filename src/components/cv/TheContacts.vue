@@ -45,7 +45,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import CvSection from './CvSection.vue' // @ is an alias to /src
-import { IContacts } from '@/store/aboutMe'
+import { IContacts } from '@/store/cvInterfaces'
 
 export default defineComponent({
   components: {

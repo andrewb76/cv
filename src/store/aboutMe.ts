@@ -1,44 +1,4 @@
-import { experience, IExperience } from './myExperience'
-
-export interface IEnRu {
-  [lang: string]: string
-}
-interface IContact {
-  title: string
-  icon: string
-  url: string
-}
-
-interface IDownload {
-  title: IEnRu
-  url: IEnRu
-}
-
-export interface IContacts {
-  city: IEnRu
-  address: IEnRu
-  home: IContact
-  email: IContact
-  phone: IContact
-  telegram: IContact
-  linkedIn: IContact
-  github: IContact
-}
-export interface IiAm {
-  name: IEnRu
-  bd: IEnRu
-  position: IEnRu
-  download: {
-    word: IDownload
-    google: IDownload
-    pdf: IDownload
-  }
-  contacts: IContacts
-  summary: IEnRu
-  skills: string[][]
-  languages: IEnRu[]
-  experience: IExperience
-}
+import { IiAm } from './cvInterfaces'
 
 export const iAm: IiAm = {
   name: {
@@ -140,13 +100,13 @@ export const iAm: IiAm = {
     }
   },
   skills: [
-    ['mysql', 'postgres', 'mongodb', 'couchdb', 'redis', 'hasura'],
+    ['mysql', 'postgres', 'sqlite', 'mongodb', 'couchdb', 'redis', 'hasura', 'supabase'],
     ['waterline', 'knex', 'objection', 'sequelize', 'mongoose'],
     ['js', 'ts', 'php', 'python', 'bash', 'ruby'],
     ['nodejs', 'express', 'koa', 'actionhero', 'socket.io'],
     ['ror', 'django', 'flask', 'laravel', 'code-igniter', 'yii', 'slim'],
     ['jquery', 'd3', 'angular', 'react', 'vue'],
-    ['html', 'svg', 'css', 'less', 'scss', 'style'],
+    ['html', 'svg', 'css', 'less', 'scss', 'style', 'tailwind', 'bootstrap'],
     ['smarty', 'twig', 'pug', 'mustache', 'EJS', 'nunjucks', 'hbs'],
     [
       'tdd',
@@ -157,7 +117,8 @@ export const iAm: IiAm = {
       'jest',
       'protractor',
       'cypress',
-      'cucumber'
+      'cucumber',
+      'sinon'
     ],
     ['docker', 'k8s', 'helm'],
     ['AWS', 'GoogleCloud', 'YandexCloud'],
@@ -182,5 +143,6 @@ export const iAm: IiAm = {
       en: 'English: UpperIntermediate'
     }
   ],
-  experience
+  experience: [],
+  certificates: []
 }

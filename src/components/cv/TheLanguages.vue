@@ -12,7 +12,7 @@
 // Languages component
 import { defineComponent, PropType } from 'vue'
 import CvSection from './CvSection.vue'
-import { IEnRu } from '@/store/aboutMe'
+import { IEnRu } from '@/store/cvInterfaces'
 
 export default defineComponent({
   components: {

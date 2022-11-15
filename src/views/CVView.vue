@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { IProject } from '@/store/projectsInterfaces'
+import { IiAm, IProject } from '@/store/cvInterfaces'
 import { useProjectsStore } from '@/store/projectsStore'
 import { useCVStore } from '@/store/cvStore'
 import TheMainInfo from '@/components/cv/TheMainInfo.vue'
@@ -37,9 +37,9 @@ export default defineComponent({
     cv.init()
     projectsStore.init()
     const education = computed(() => projectsStore.education as IProject)
-    const projects = computed(() => projectsStore.projects)
-    const certificates = computed(() => cv.iAm.certificates)
-    const iAm = computed(() => cv.iAm)
+    const projects = computed(() => projectsStore.projects as IProject[])
+    const certificates = computed(() => cv.iAm.certificates as IProject[])
+    const iAm = computed(() => cv.iAm as IiAm)
     return {
       iAm,
       education,
