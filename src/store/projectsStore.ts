@@ -66,6 +66,25 @@ interface ISetHoverParams {
   value: string
 }
 
+const getBinJsonById = (id: string) => {
+  const projectsDataUrl = `${JSON_BIN_ROOT}/b/${id}?meta=false`
+
+  return fetch(projectsDataUrl, {
+    headers: {
+      'X-Access-Key': JSONBIN_X_ACCESS_KEY
+    }
+  })
+  .then((response) => response.json())
+}
+
+const projectsFromJson = (arr: IProjectJson[]): IProject[] => arr.map(
+  (project: IProjectJson): IProject => ({
+    ...project,
+    from: new Date(project.from[0], project.from[1]),
+    to: new Date(project.to[0], project.to[1])
+  })
+)
+
 export const useProjectsStore = defineStore('projects', {
   state: () => ({ ...initialState }),
   getters: {
@@ -117,31 +136,11 @@ export const useProjectsStore = defineStore('projects', {
       this.projectKeys = []
     },
     init (): Promise<void> {
-      const projectsDataUrl = `${JSON_BIN_ROOT}/b/${JSONBIN_PROJECTS_ID}?meta=false`
-
-      return fetch(projectsDataUrl, {
-        headers: {
-          'X-Access-Key': JSONBIN_X_ACCESS_KEY
-        }
-      })
-        .then((response) => response.json())
+      return getBinJsonById(JSONBIN_PROJECTS_ID)
         .then((projects) => {
-          if (!Array.isArray(projects)) {
-            this.projects = []
-          } else {
-            this.projects = projects.map(
-              (project: IProjectJson): IProject => ({
-                ...project,
-                from: new Date(project.from[0], project.from[1]),
-                to: new Date(project.to[0], project.to[1])
-              })
-            )
-          }
+          this.projects = projects instanceof Array<IProjectJson> ? projectsFromJson(projects) : []
           this.projectDic = this.projects.reduce(
-            (acc: IProjectDic, pr: IProject) => ({
-              ...acc,
-              [pr.key]: pr
-            }),
+            (acc: IProjectDic, pr: IProject) => ({ ...acc, [pr.key]: pr }),
             {} as IProjectDic
           )
           this.years = R.pipe(
