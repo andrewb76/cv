@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import { IProject, IProjectDic } from '@/store/cvInterfaces'
 import { getProjects } from './helpers'
 
-const EDUCATION_PROJECT_KEY = 'ed_tnu'
+const EDUCATION_PROJECT_KEYS = ['ed_tnu']
 
 const getPrRage = (pr: IProject) =>
   R.range(pr.from.getFullYear(), (pr.to || pr.from).getFullYear() + 1).map(
@@ -70,9 +70,9 @@ export const useProjectsStore = defineStore('projects', {
     projectRange: () => (pr: IProject) => {
       return getPrRage(pr)
     },
-    education: (state) => {
-      return state.projects.find(
-        (pr: IProject) => pr.key === EDUCATION_PROJECT_KEY
+    educations: (state) => {
+      return state.projects.filter(
+        (pr: IProject) => EDUCATION_PROJECT_KEYS.includes(pr.key)
       )
     },
     selectedFnsByAreaType:

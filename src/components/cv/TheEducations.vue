@@ -1,7 +1,7 @@
 <template>
-  <cv-section s_name="educations">
-    <div class="section__body text-justify">
-      {{ data.description[$i18n.locale] }}
+  <cv-section s_name="educations" :isLoading="isLoading">
+    <div v-for="ed in data" :key="ed.key" class="section__body text-justify">
+      {{ ed.description[$i18n.locale] }}
     </div>
   </cv-section>
 </template>
@@ -17,8 +17,12 @@ export default defineComponent({
     CvSection,
   },
   props: {
+    isLoading: {
+      type: Boolean,
+      default: true
+    },
     data: {
-      type: Object as PropType<IProject>,
+      type: Object as PropType<IProject[]>,
       required: true,
     },
   },
