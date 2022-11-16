@@ -47,7 +47,7 @@ export const iAm: IiAm = {
   },
   summary: {
     en: `Passionate full-stack engineer with over 20 years of hands-on experience in developing products using a wide range of FE and BE skills.
-    More then 50 IT projects with different complications. Familiar with lots of programming utilities and languages.
+    More than 50 IT projects with different complications. Familiar with lots of programming utilities and languages.
     Experienced in software architecture, business process modeling and optimization, solves challenges. Working knowledge of DevOps, CI/CD.
     Agile mindset but adaptable to different tools and methodologies. Value data and truth over ego. Capable of working on own initiative and as a team player.
     Excited about mentoring junior developers. Trying to use best practices in my daily basis work.`,

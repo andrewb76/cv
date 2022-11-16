@@ -62,6 +62,7 @@ export default defineComponent({
     },
   },
   setup() {
+    console.log('setup >>>>>>>');
     const projectsModalVisible = ref(false)
     const projectsModalIndex = ref(0)
     const router = useRouter()
@@ -73,6 +74,7 @@ export default defineComponent({
       if (key === '#projects') {
         projectsModalVisible.value = true
         projectsModalIndex.value = parseInt(val || '0')
+        console.log('::::', projectsModalVisible.value, projectsModalIndex.value);
         router.replace({ path: '/' })
       }
     }

@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@cloudflare/workers-types": "^3.18.0",
     "@cypress/browserify-preprocessor": "^3.0.2",
     "@intlify/vue-i18n-loader": "^3.0.0",
     "@rushstack/eslint-patch": "^1.2.0",
