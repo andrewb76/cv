@@ -21,10 +21,6 @@ export default defineComponent({
       type: Number,
       required: true,
     },
-    currentItem: {
-      type: Number,
-      required: true,
-    },
     goToItemByIndex: {
       type: Function as PropType<(newInd: number) => void>,
       required: true,

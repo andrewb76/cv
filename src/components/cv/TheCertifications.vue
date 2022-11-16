@@ -1,5 +1,5 @@
 <template>
-  <cv-section s_name="certifications">
+  <cv-section s_name="certifications" :isLoading="isLoading">
     <div class="section__body">
       <div
         class="certificate flex flex-col pb-3"
@@ -35,6 +35,10 @@ export default defineComponent({
     CvSection,
   },
   props: {
+    isLoading: {
+      type: Boolean,
+      default: true
+    },
     data: {
       type: Array as PropType<IProject[]>,
       required: true,

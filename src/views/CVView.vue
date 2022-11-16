@@ -15,8 +15,6 @@ import TheSkills from '@/components/cv/TheSkills.vue'
 import TheSummary from '@/components/cv/TheSummary.vue'
 import TheExperience from '@/components/cv/TheExperience.vue'
 
-// https://www.tailwindawesome.com/resources/personal-cv/demo // remove this
-
 export default defineComponent({
   components: {
     TheSummary,
@@ -32,19 +30,23 @@ export default defineComponent({
     TheProjectsModal,
   },
   setup() {
-    const cv = useCVStore()
+    const cvStore = useCVStore()
     const projectsStore = useProjectsStore()
-    cv.init()
+    cvStore.init()
     projectsStore.init()
-    const education = computed(() => projectsStore.education as IProject)
+    const educations = computed(() => projectsStore.educations as IProject[])
     const projects = computed(() => projectsStore.projects as IProject[])
-    const certificates = computed(() => cv.iAm.certificates as IProject[])
-    const iAm = computed(() => cv.iAm as IiAm)
+    const projectsIsLoading = computed(() => projectsStore.isLoading)
+    const certificatesIsLoading = computed(() => cvStore.isLoading)
+    const certificates = computed(() => cvStore.iAm.certificates as IProject[])
+    const iAm = computed(() => cvStore.iAm as IiAm)
     return {
       iAm,
-      education,
+      educations,
       projects,
       certificates,
+      projectsIsLoading,
+      certificatesIsLoading
     }
   },
 })
@@ -55,21 +57,21 @@ export default defineComponent({
       <div class="space-y-5">
         <the-main-info :data="iAm" />
         <the-contacts :data="iAm.contacts" />
-        <the-educations :data="education" />
+        <the-educations :data="educations" :isLoading="projectsIsLoading" />
         <the-languages :data="iAm.languages" />
-        <the-certifications :data="certificates" />
+        <the-certifications :data="certificates" :isLoading="certificatesIsLoading" />
         <the-skills :data="iAm.skills" />
       </div>
       <div class="space-y-5 lg:col-span-2">
         <!-- Start Right Side -->
         <the-summary :data="iAm.summary" />
-        <the-experience :data="iAm.experience" />
+        <the-experience :data="iAm.experience" :isLoading="certificatesIsLoading" />
         <the-projects :data="projects" />
       </div>
     </div>
   </main>
-  <the-certifications-modal :data="certificates" />
-  <the-projects-modal :data="projects" />
+  <the-certifications-modal :data="certificates" :isLoading="certificatesIsLoading" />
+  <the-projects-modal :data="projects" :isLoading="projectsIsLoading" />
 </template>
 <style scoped lang="scss">
 .block-section {
