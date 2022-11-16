@@ -8,7 +8,6 @@ module.exports = defineConfig({
   chainWebpack: (config) => {
     config.plugin('html').tap((args) => {
       args[0].title = 'Andrew Butov Fullstack JS Developer'
-      args[0].sentryDSN = process.env.VUE_APP_SENTRY_DSN
       return args
     })
     config.module
@@ -27,5 +26,8 @@ module.exports = defineConfig({
       compositionOnly: false,
       fullInstall: true
     }
+  },
+  configureWebpack: (config) => {
+    config.devtool = 'source-map'
   }
 })

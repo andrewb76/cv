@@ -13,27 +13,30 @@
       class="modal-box overflow-hidden h-full flex flex-col min-h-min"
       @click.stop="() => {}"
     >
-      <the-certifications-modal-content
-        :data="data[certModalIndex]"
-        :goNext="
-          () => showCertModal(nextItemIndex(data.length, certModalIndex), true)
-        "
-      />
-      <modal-tech-stack :data="data[certModalIndex].techStack" />
-      <modal-pager
-        iconName="certificate"
-        :totalItems="data.length"
-        :currentItem="certModalIndex"
-        :goToItemByIndex="(itemIndex: number):void => {
-          showCertModal(itemIndex, true)
-        }"
-      />
-      <modal-nav-close-btn
-        :prev="prevItemIndex(data.length, certModalIndex)"
-        :next="nextItemIndex(data.length, certModalIndex)"
-        :closeModal="() => showCertModal(0, false)"
-        :goToItemByIndex="(itemIndex) => showCertModal(itemIndex, true)"
-      />
+      <cv-section-loader v-if="isLoading" />
+      <div v-else>
+        <the-certifications-modal-content
+          :data="data[certModalIndex]"
+          :goNext="
+            () => showCertModal(nextItemIndex(data.length, certModalIndex), true)
+          "
+        />
+        <modal-tech-stack :data="data[certModalIndex].techStack" />
+        <modal-pager
+          iconName="certificate"
+          :totalItems="data.length"
+          :currentItem="certModalIndex"
+          :goToItemByIndex="(itemIndex) => {
+            showCertModal(itemIndex, true)
+          }"
+        />
+        <modal-nav-close-btn
+          :prev="prevItemIndex(data.length, certModalIndex)"
+          :next="nextItemIndex(data.length, certModalIndex)"
+          :closeModal="() => showCertModal(0, false)"
+          :goToItemByIndex="(itemIndex) => showCertModal(itemIndex, true)"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -47,6 +50,7 @@ import ModalTechStack from '@/components/cv/modal/ModalTechStack.vue'
 import ModalMixin from '@/components/cv/modal/ModalMixin.vue'
 import ModalPager from '@/components/cv/modal/ModalPager.vue'
 import ModalNavCloseBtn from '@/components/cv/modal/ModalNavCloseBtn.vue'
+import CvSectionLoader from '@/components/cv/CvSectionLoader.vue'
 
 export default defineComponent({
   mixins: [ModalMixin],
@@ -55,8 +59,13 @@ export default defineComponent({
     ModalTechStack,
     ModalPager,
     ModalNavCloseBtn,
+    CvSectionLoader
   },
   props: {
+    isLoading: {
+      type: Boolean,
+      default: true
+    },
     data: {
       type: Array as PropType<IProject[]>,
       required: true,
@@ -73,7 +82,8 @@ export default defineComponent({
       const [key, val] = routeHash.split('-')
       if (key === '#cert') {
         certModalVisible.value = true
-        certModalIndex.value = parseInt(val)
+        certModalIndex.value = parseInt(val || '0')
+        console.log('))))))))))', certModalIndex.value, '))');
         router.replace({ path: '/' })
       }
     }
