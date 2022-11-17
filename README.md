@@ -53,19 +53,9 @@
 
 ## 😂 Here is a random joke that'll make you laugh!
 ![Jokes Card](https://readme-jokes.vercel.app/api)
+
 ## CLI
 
-### SNYK check dependencies and generate html report file
-
-```bash
-npx snyk test --json > reports/snyk_results && npx snyk-to-html -i reports/snyk_results.json -o reports/snyk_results.html -s
-```
-
-### BDD configured cypress for e2e tests
-
-```bash
-npx cypress run
-```
 
 ### Project setup
 
@@ -90,6 +80,37 @@ npm run build
 ```bash
 npm run lint
 npx mega-linter-runner --flavor salesforce -e 'ENABLE=,DOCKERFILE,MARKDOWN,YAML' -e 'SHOW_ELAPSED_TIME=true'
+```
+
+### SNYK check dependencies and generate html report file
+
+```bash
+npx snyk test --json > reports/snyk_results && npx snyk-to-html -i reports/snyk_results.json -o reports/snyk_results.html -s
+```
+
+## BDD configured cypress for e2e tests
+No longer do your business, development and testing teams need to translate each others requirements and reports into something else to do their job. This natural language, behavior-driven development (BDD) library exists to simplify the documenting of requirements and the testing of your API's.
+Gherkin Syntax https://cucumber.io/docs/gherkin/
+
+### How's it Work?
+In most environments, contributors - which include Product Owners, Subject Matter Experts, Architects, Solution Owner/Architects, Tech/Team Leads, and more - create scenarios which are added to feature files. In most cases these are added to existing project repositories (or newly created ones).
+The developer then reviews the requirements (or acceptance criteria) and creates functionality to support, while running those scnearios as as tests with every change to confirm that there's been no regressions and that the feature is functionally complete.
+
+![The BDD + TDD Workflow](./public/docs/bdd+tdd.png "BDD + TDD Workflow")
+
+Example
+```gherkin
+    Given I am a JSON API consumer
+      And I am executing test "RSJ2"
+     When I request GET "/json/users"
+     Then I should get a status code of 200
+      And the response value of "users[0].email" should equal "Sincere@april.biz"
+      And the response value of "users[0].address.city" should not equal "Boston"
+```
+
+Run tests locally
+```bash
+npx cypress run
 ```
 
 ### Customize configuration
