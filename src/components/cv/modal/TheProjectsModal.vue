@@ -71,13 +71,11 @@ export default defineComponent({
     },
   },
   setup() {
-    console.log('--->>>>')
     const projectsModalVisible = ref(false)
     const projectsModalIndex = ref(0)
     const router = useRouter()
     const route = useRoute()
     const routeHash = route.hash
-    console.log('>>>>', routeHash)
     if (routeHash === '#projects') {
       projectsModalVisible.value = true
       projectsModalIndex.value = 0
