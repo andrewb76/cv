@@ -105,7 +105,7 @@ export const iAm: IiAm = {
     ['js', 'ts', 'php', 'python', 'bash', 'ruby'],
     ['nodejs', 'express', 'koa', 'actionhero', 'socket.io'],
     ['ror', 'django', 'flask', 'laravel', 'code-igniter', 'yii', 'slim'],
-    ['jquery', 'd3', 'angular', 'react', 'vue'],
+    ['jquery', 'd3', 'angular', 'react', 'vue', 'rxjs', 'ramda'],
     ['html', 'svg', 'css', 'less', 'scss', 'style', 'tailwind', 'bootstrap'],
     ['smarty', 'twig', 'pug', 'mustache', 'EJS', 'nunjucks', 'hbs'],
     [
@@ -133,8 +133,7 @@ export const iAm: IiAm = {
       'graylog',
       'grafana',
       'prometheus'
-    ],
-    ['rxjs', 'ramda']
+    ]
   ],
   languages: [
     { ru: 'Русский: Родной', en: 'Russian: Native' },

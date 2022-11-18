@@ -83,11 +83,11 @@
     "short": "OUP Ukraine",
     "title": {
       "ru": "Предстовительство Oxford University Press в Украине",
-      "en": "Agency of Oxford University Press in Ukraine"
+      "en": "Subdivision of Oxford University Press in Ukraine"
     },
     "description": {
       "ru": "Программа по учету командировочных расходов на С, Cистема приёма и обработки заказов и складского учета на 1С",
-      "en": "Program for accounting for travel expenses, System for receiving and processing orders and warehouse accounting."
+      "en": "Program for accounting of travel expenses, System for receiving and processing orders and warehouse accounting."
     },
     "techStack": [
       "c++",
