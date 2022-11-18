@@ -57,17 +57,17 @@
       "ru": "Инженер"
     },
     "from": {
-      "en": "August 2020",
-      "ru": "Август 2020"
+      "en": "August 2018",
+      "ru": "Август 2018"
     },
     "to": {
-      "en": "for now",
-      "ru": " - "
+      "en": "April 2022",
+      "ru": "April 2022"
     },
     "responsibilities": [
       {
-        "en": "Web Dev. Company \"Black Horse Team\".\n        Was implemented more than five projects of varying complexity. From refinement and refactoring of existing ones to development from scratch.\n        Thematic Video Hosting, Mobile Streaming Platform, 3D furniture designer,...\n        All stages of development from finding out business needs to designing architecture, breaking down into iterations and their estimates,\n        splitting the user stories into tasks and subtasks, development, manual and automatic testing.\n        Static code analysis and hard linter. Architecture review is separated from code review at the task level. Agile, Scrum, CI/CD",
-        "ru": "Web Dev. Company \"Black Horse Team\". Реализовали более пяти проектов разной сложности,\n        от доработки и рефакторинга существующих до разработки с нуля. Тематический Видеохостинг, Мобильная стриминговая платформа,\n        3D конструктор мебели,... Все стадии разработки от выяснение бизнес целей до разработка архитектуры, разбиение на итерации и их оценка,\n        дробление юзер строи на задачи и подзадачи, разработка, ручное и автоматическое и тестирование.\n        Статический анализ кода и жесткий Линтер. Ревью архитектуры отделено от ревью кода на уровне задач. Agile, Скрам,  CI/CD.\n"
+        "en": "Web Dev. Company \"Black Horse Team\". Was implemented more than five projects of varying complexity.\n From refinement and refactoring of existing ones to development from scratch.\n        Thematic Video Hosting, Mobile Streaming Platform, 3D furniture designer,...\n        All stages of development from finding out business needs to designing architecture, breaking down into iterations and their estimates,\n        splitting the user stories into tasks and subtasks, development, manual and automatic testing.\n        Static code analysis and hard linter. Architecture review is separated from code review at the task level. Agile, Scrum, CI/CD",
+        "ru": "Web Dev. Company \"Black Horse Team\". Реализовали более пяти проектов разной сложности,\n от доработки и рефакторинга существующих до разработки с нуля. Тематический Видеохостинг, Мобильная стриминговая платформа,\n        3D конструктор мебели,... Все стадии разработки от выяснение бизнес целей до разработка архитектуры, разбиение на итерации и их оценка,\n        дробление юзер строи на задачи и подзадачи, разработка, ручное и автоматическое и тестирование.\n        Статический анализ кода и жесткий Линтер. Ревью архитектуры отделено от ревью кода на уровне задач. Agile, Скрам,  CI/CD.\n"
       }
     ]
   },
@@ -162,8 +162,8 @@
     },
     "responsibilities": [
       {
-        "en": "FMCJ Distributing company \"QP Crimea\" ltd. Direct and implement the operational strategy, business processes, and systems for overall distribution operations,\n        including order fulfillment, warehousing, inventory management, logistics and transportation. Implements data-driven analytical tools and systems to\n        continuously monitor operations, identify inefficiencies, and develop optimization strategies.",
-        "ru": "FMCJ Дистрибьюторская компания ООО \"QP Крым\". Разработка и внедрение стратегии развития, автоматизация бизнес-процессов в сфере отношения с поставщиками,\n        оптимизирование и управление складскими запасами, логистики и транспортировки, товарного кредитования клиентов. Занимался внедрением аналитических инструментов\n        и практик на основе анализа оперативных данных. Непрерывный мониторинг операций, выявление неэффективности и разработка стратегий оптимизации."
+        "en": "FMCG Distributing company \"QP Crimea\" ltd. Direct and implement the operational strategy, business processes, and systems for overall distribution operations,\n        including order fulfillment, warehousing, inventory management, logistics and transportation. Implements data-driven analytical tools and systems to\n        continuously monitor operations, identify inefficiencies, and develop optimization strategies.",
+        "ru": "FMCG Дистрибьюторская компания ООО \"QP Крым\". Разработка и внедрение стратегии развития, автоматизация бизнес-процессов в сфере отношения с поставщиками,\n        оптимизирование и управление складскими запасами, логистики и транспортировки, товарного кредитования клиентов. Занимался внедрением аналитических инструментов\n        и практик на основе анализа оперативных данных. Непрерывный мониторинг операций, выявление неэффективности и разработка стратегий оптимизации."
       }
     ]
   },
